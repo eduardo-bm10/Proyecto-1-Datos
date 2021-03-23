@@ -9,9 +9,8 @@ public class Display extends JFrame {
     private double delta =0;
     private int AVERAGE_FPS = FPS;
 
-
     public Display(){
-        setTitle(" Space Invaders");
+        setTitle("Space Invaders");
         setSize(WIDTH,HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
