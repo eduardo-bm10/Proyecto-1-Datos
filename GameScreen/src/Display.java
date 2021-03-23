@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Display extends JFrame {
 
-    private final int WIDTH = 800, HEIGHT = 600;
+    private final int WIDTH = 1250, HEIGHT = 720;
 
     private final int FPS =60;
     private double TARGETTIME;
@@ -14,7 +14,7 @@ public class Display extends JFrame {
         setTitle(" Space Invaders");
         setSize(WIDTH,HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
     }
