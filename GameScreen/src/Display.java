@@ -11,16 +11,11 @@ public class Display extends JFrame {
 
 
     public Display(){
-        setTitle(" Space Invaders");
+        setTitle("Space Invaders");
         setSize(WIDTH,HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new Display();
-
     }
 }
