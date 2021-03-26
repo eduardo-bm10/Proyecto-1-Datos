@@ -2,11 +2,24 @@ public class Row
 {
     public static class BasicRow
     {
-        int length = 5;
+        Enemy enemigo1 = new Enemy(1,1);
+        Enemy enemigo2 = new Enemy(1,1);
+        Enemy enemigo3 = new Enemy(1,1);
+        Enemy enemigo4 = new Enemy(1,1);
+        Enemy enemigo5 = new Enemy(1,1);
+        Enemy enemigo6 = new Enemy(1,1);
+        Enemy enemigo7 = new Enemy(1,1);
+
+        public void addToList(Enemy addedEnemy){}
     }
     public static class ClassARow extends BasicRow
     {
+        Enemy jefe1 = new Boss(5,2);
 
+        public void addBossToList()
+        {
+            super.addToList(jefe1);
+        }
     }
     public static class ClassBRow extends ClassARow
     {
