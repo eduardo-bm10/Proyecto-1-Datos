@@ -1,3 +1,5 @@
+package characters;
+
 public class Player
 {
     int vidasJugador;

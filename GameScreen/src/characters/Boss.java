@@ -1,3 +1,5 @@
+package characters;
+
 public class Boss extends Enemy
 {
     public Boss(int vidasJefe, int tamañoJefe)
