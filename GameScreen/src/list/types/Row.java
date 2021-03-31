@@ -1,3 +1,8 @@
+package list.types;
+
+import characters.Enemy;
+import characters.Boss;
+
 public class Row
 {
     public static class BasicRow
