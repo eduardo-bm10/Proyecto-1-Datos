@@ -26,8 +26,5 @@ public class Display extends JFrame {
         background1.setSize(WIDTH, HEIGHT);
         background1.setBackground(Color.black);
         add(background1);
-
-        Player jugador = new Player();
-        add(jugador);
     }
 }

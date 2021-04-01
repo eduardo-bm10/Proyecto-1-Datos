@@ -7,7 +7,12 @@ import java.awt.Color;
 
 public class Player extends JPanel
 {
-    int vidasJugador = 3;
+    int vidasJugador;
+
+    public Player(int vidasJugador)
+    {
+        this.vidasJugador = vidasJugador;
+    }
 
     @Override
     public void paintComponents(Graphics g)

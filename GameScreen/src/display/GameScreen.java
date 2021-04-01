@@ -7,6 +7,10 @@ public class GameScreen
 {
     public static void main(String[] args)
     {
-        new Display();
+        Display ventana = new Display();
+
+        Player jugador = new Player(3);
+
+        ventana.add(jugador);
     }
 }
