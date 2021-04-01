@@ -1,35 +1,29 @@
 package characters;
 
-public class Player
-{
-    int vidasJugador;
+import shooting.PlayerMissile;
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Color;
 
-    public Player(int vidasJugador)
+public class Player extends JPanel
+{
+    int vidasJugador = 3;
+
+    @Override
+    public void paintComponents(Graphics g)
     {
-        if (vidasJugador > 3)
-            throw new IllegalArgumentException("El jugador no puede tener mas de tres vidas");
-        this.vidasJugador = vidasJugador;
+        super.paintComponents(g);
+
+        g.setColor(Color.BLUE);
+        g.fillRect(30, 40, 50, 60);
     }
 
-    public void movimientoDeLaNave()
-    {
+    public void movimientoDeLaNave() {
         //Aqui iria todo lo del movimiento del mouse
     }
 
-    public Missile disparar()
-    {
-        return new Missile();
-    }
-
-    private static class Missile
-    {
-        int velocidadDisparo = 10;
-
-        protected void movimientoDisparo()
-        {
-            //Aqui va el movimiento del disparo hacia arriba.
-        }
-
+    public PlayerMissile disparar() {
+        return new PlayerMissile();
     }
 }
 
