@@ -1,29 +1,41 @@
 package characters;
 
+import images.Loader;
 import shooting.PlayerMissile;
-import javax.swing.JPanel;
-import java.awt.Graphics;
-import java.awt.Color;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
-public class Player extends JPanel
+public class Player extends MouseAdapter
 {
+    public BufferedImage playerTexture;
+    int positionX;
+    int positionY;
     int vidasJugador = 3;
 
-    @Override
-    public void paintComponents(Graphics g)
+    public Player(int positionX, int positionY, BufferedImage playerTexture)
     {
-        super.paintComponents(g);
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.playerTexture = playerTexture;
 
-        g.setColor(Color.BLUE);
-        g.fillRect(30, 40, 50, 60);
     }
 
-    public void movimientoDeLaNave() {
-        //Aqui iria todo lo del movimiento del mouse
-    }
+    static class Movement extends MouseAdapter
+    {
+        public int x;
+        public int y;
 
-    public PlayerMissile disparar() {
-        return new PlayerMissile();
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int dx = e.getX() - x;
+            int dy = e.getY() - y;
+
+            x += dx;
+            y += dy;
+        }
     }
 }
 

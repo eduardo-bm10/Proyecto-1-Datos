@@ -21,13 +21,5 @@ public class Display extends JFrame {
         setResizable(true);
         setLocationRelativeTo(null);
         setVisible(true);
-
-        Canvas background1 = new Canvas();
-        background1.setSize(WIDTH, HEIGHT);
-        background1.setBackground(Color.black);
-        add(background1);
-
-        Player jugador = new Player();
-        add(jugador);
     }
 }
