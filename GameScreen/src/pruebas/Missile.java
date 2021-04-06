@@ -1,3 +1,5 @@
+package pruebas;
+
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
