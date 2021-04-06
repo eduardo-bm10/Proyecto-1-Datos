@@ -1,7 +1,5 @@
 package characters;
 
-import images.Loader;
-import shooting.PlayerMissile;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
