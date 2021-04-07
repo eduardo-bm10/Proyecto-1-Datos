@@ -1,37 +1,27 @@
 package images;
 
+import characters.Player;
 import java.awt.*;
-import javax.swing.JFrame;
+import java.awt.image.BufferedImage;
+import javax.swing.*;
 
-public class ImageLoader extends Canvas{
+public class ImageLoader extends JPanel
+{
+    public int posicionX;
+    public int posicionY;
 
-    public void paint(Graphics g) {
-        move( );
-
-        int x = 0;
-        int y;
-
+    public ImageLoader(int x, int y)
+    {
+        this.posicionX = x;
+        this.posicionY = y;
+    }
+    public void paint(Graphics g)
+    {
+        super.paint(g);
         Toolkit t = Toolkit.getDefaultToolkit();
-        Image i = t.getImage("spaceing.png");
-        g.drawImage(i, x , y,this);
-
+        Image i = t.getImage("GameScreen/images/player.png");
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.drawImage(i, posicionX, posicionY, this);
     }
-
-    public void move(int x, int y){
-
-        int xNave = x;
-        int yNave = y;
-    }
-
-    public static void main(String[] args) {
-        ImageLoader m = new ImageLoader();
-        JFrame f = new JFrame();
-        f.add(m);
-        f.setSize(800,600);
-        f.setVisible(true);
-        f.setResizable(false);
-    }
-
-
 }
 
