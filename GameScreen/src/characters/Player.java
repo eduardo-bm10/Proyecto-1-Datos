@@ -1,29 +1,25 @@
 package characters;
 
-import images.Loader;
-import shooting.PlayerMissile;
+import images.ImageLoader;
+import javax.swing.JPanel;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-public class Player extends MouseAdapter
+public class Player extends JPanel
 {
-    public BufferedImage playerTexture;
-    int positionX;
-    int positionY;
-    int vidasJugador = 3;
+    public ImageLoader imagen = new ImageLoader(350, 400);
+    Movement movimiento = new Movement();
 
-    public Player(int positionX, int positionY, BufferedImage playerTexture)
+    public Player()
     {
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.playerTexture = playerTexture;
-
+        addMouseMotionListener(movimiento);
+        addMouseListener(movimiento);
     }
 
-    static class Movement extends MouseAdapter
+    class Movement extends MouseAdapter
     {
         public int x;
         public int y;
@@ -33,6 +29,12 @@ public class Player extends MouseAdapter
             int dx = e.getX() - x;
             int dy = e.getY() - y;
 
+            if (imagen.contains(x, y))
+            {
+                imagen.posicionX += dx;
+                imagen.posicionY += dy;
+                imagen.repaint();
+            }
             x += dx;
             y += dy;
         }
