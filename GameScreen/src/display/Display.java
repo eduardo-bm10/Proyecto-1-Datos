@@ -1,8 +1,13 @@
-import javax.swing.*;
+package display;
+
+import javax.swing.JFrame;
+import java.awt.*;
+
+import characters.Player;
 
 public class Display extends JFrame {
 
-    private final int WIDTH = 800, HEIGHT = 600;
+    private final int WIDTH = 900, HEIGHT = 600;
 
     private final int FPS =60;
     private double TARGETTIME;
