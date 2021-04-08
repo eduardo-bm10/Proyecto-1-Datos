@@ -1,4 +1,9 @@
-import javax.swing.*;
+package display;
+
+import javax.swing.JFrame;
+import java.awt.Canvas;
+import java.awt.Color;
+import characters.Player;
 
 public class Display extends JFrame {
 
@@ -8,7 +13,6 @@ public class Display extends JFrame {
     private double TARGETTIME;
     private double delta =0;
     private int AVERAGE_FPS = FPS;
-
 
     public Display(){
         setTitle("Space Invaders");
