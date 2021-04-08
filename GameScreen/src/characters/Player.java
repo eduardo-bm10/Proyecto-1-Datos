@@ -1,5 +1,7 @@
 package characters;
 
+import shooting.PlayerMissile;
+import display.Game;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -10,6 +12,7 @@ public class Player extends JPanel
 {
     public Rectangle2D.Float jugador = new Rectangle2D.Float(350, 400, 50, 70);
     Movement movimiento = new Movement();
+    PlayerMissile disparo;
 
     public Player()
     {
@@ -25,7 +28,7 @@ public class Player extends JPanel
         g2D.fill(jugador);
     }
 
-    class Movement extends MouseAdapter
+    public class Movement extends MouseAdapter
     {
         public int x;
         public int y;
@@ -47,6 +50,18 @@ public class Player extends JPanel
             }
             x += dx;
             y += dy;
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            disparo = new PlayerMissile(jugador.x - 40, jugador.y - 50);
+
+            disparo.setDoubleBuffered(true);
+            Game.ventana.add(disparo);
+
+            disparo.movimientoDisparo();
+
+            System.out.println("SI");
         }
     }
 }
