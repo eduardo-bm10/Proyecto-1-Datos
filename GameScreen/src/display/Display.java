@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import java.awt.*;
 
 import characters.Player;
+import characters.Enemy;
 
 public class Display extends JFrame {
 
@@ -14,13 +15,21 @@ public class Display extends JFrame {
     private double delta =0;
     private int AVERAGE_FPS = FPS;
 
+    public static JFrame window = new JFrame();
 
     public Display(){
-        setTitle("Space Invaders");
-        setSize(WIDTH,HEIGHT);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(true);
-        setLocationRelativeTo(null);
-        setVisible(true);
+        window.setTitle("Space Invaders");
+        window.setSize(WIDTH,HEIGHT);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setResizable(true);
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
+
+        Player jugador = new Player();
+        window.add(jugador);
+
+        Enemy enemigo = new Enemy(30,50);
+        window.add(enemigo);
+        enemigo.movimientoEnemigo();
     }
 }

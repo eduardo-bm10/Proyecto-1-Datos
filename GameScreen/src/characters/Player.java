@@ -1,7 +1,7 @@
 package characters;
 
 import shooting.PlayerMissile;
-import display.Game;
+import display.Display;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -24,7 +24,7 @@ public class Player extends JPanel
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setColor(Color.RED);
+        g2D.setColor(Color.darkGray);
         g2D.fill(jugador);
     }
 
@@ -57,7 +57,7 @@ public class Player extends JPanel
             disparo = new PlayerMissile(jugador.x - 40, jugador.y - 50);
 
             disparo.setDoubleBuffered(true);
-            Game.ventana.add(disparo);
+            Display.window.add(disparo);
 
             disparo.movimientoDisparo();
 

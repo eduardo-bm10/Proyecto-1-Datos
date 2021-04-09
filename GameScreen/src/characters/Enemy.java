@@ -21,23 +21,20 @@ public class Enemy extends JPanel
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setColor(Color.darkGray);
+        g2D.setColor(Color.orange);
         g2D.fill(enemigo);
     }
 
     public void movimientoEnemigo()
     {
-        if (enemigo.x <= 800)
-        {
+        while (enemigo.x < 800 & enemigo.y < 400) {
             enemigo.x += 5;
+            enemigo.y += 5;
             repaint();
+            try {Thread.sleep(10); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
         }
-        else{
-            enemigo.x -= 5;
-            repaint();
-        }
-        enemigo.y += 10;
     }
+
     public void muerteEnemigo()
     {
         //El enemigo desaparece

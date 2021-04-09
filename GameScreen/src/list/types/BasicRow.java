@@ -1,29 +1,19 @@
 package list.types;
 
 import characters.Enemy;
-import characters.Boss;
 
 public class BasicRow
 {
-    Node posicion;
+    LinkedList lista = new LinkedList();
 
-    public void crearLista(Enemy enemigo)
+    Enemy[] enem = new Enemy[6];
+
+    public void crearLista()
     {
-        int contador = 6;
-
-        while (contador > 0)
+        for (int i = 0; i < 6; i++ )
         {
-            posicion = new Node(enemigo);
-            posicion.next = posicion;
-            contador --;
+            lista.insertFirst(enem[i]);
         }
-    }
-
-    Thread mover = new Thread();
-    public void movimientoHilera()
-    {
-
-        mover.start();
     }
 }
 
