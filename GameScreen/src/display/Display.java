@@ -1,6 +1,7 @@
 package display;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import java.awt.*;
 
 import characters.Player;
@@ -16,8 +17,11 @@ public class Display extends JFrame {
     private int AVERAGE_FPS = FPS;
 
     public static JFrame window = new JFrame();
+    JPanel color = new JPanel();
 
     public Display(){
+        color.setBackground(Color.GREEN);
+        window.add(color);
         window.setTitle("Space Invaders");
         window.setSize(WIDTH,HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,11 +29,24 @@ public class Display extends JFrame {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
 
+        addPlayerToScreen();
+    }
+
+    public void addEnemyRowToScreen(int listType)
+    {
+        if (listType == 1)
+        {
+
+        }
+        else if (listType == 2)
+        {
+
+        }
+    }
+
+    public void addPlayerToScreen()
+    {
         Player jugador = new Player();
         window.add(jugador);
-
-        Enemy enemigo = new Enemy(30,50);
-        window.add(enemigo);
-        enemigo.movimientoEnemigo();
     }
 }
