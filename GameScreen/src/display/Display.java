@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.*;
 import characters.Player;
-import characters.Enemy;
+import list.types.Row;
 
 public class Display extends JFrame {
 
@@ -32,18 +32,24 @@ public class Display extends JFrame {
         addPlayerToScreen();
     }
 
-    public void addEnemyRowToScreen(int listType)
+    public void addRowsToScreen(int type)
     {
-        if (listType == 1)
-        {
+        Row row = new Row();
 
-        }
-        else if (listType == 2)
-        {
+        if (type == 1)
+            row.createBasic();
+        else if (type == 2)
+            row.createClassA();
+        else if (type == 3)
+            row.createClassB();
+        else if (type == 4)
+            row.createClassC();
+        else if (type == 5)
+            row.createClassD();
+        else
+            row.createClassE();
 
-        }
     }
-
     public void addPlayerToScreen()
     {
         Player jugador = new Player();

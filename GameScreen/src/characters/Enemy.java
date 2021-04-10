@@ -6,15 +6,13 @@ import java.awt.geom.Rectangle2D;
 
 public class Enemy extends JPanel
 {
-    int normalWidth;
-    int normalHeight;
+    int lives;
 
-    public Rectangle2D.Float enemigo = new Rectangle2D.Float(10, 10, normalWidth, normalHeight);
+    public Rectangle2D.Float enemigo = new Rectangle2D.Float(10, 10, 80, 70);
 
-    public Enemy(int normalWidth, int normalHeight)
+    public Enemy(int lives)
     {
-        this.normalWidth = normalWidth;
-        this.normalHeight = normalHeight;
+        this.lives = lives;
     }
 
     @Override
