@@ -1,9 +1,13 @@
 package characters;
 
+import list.types.CircularLinkedList;
+
 import java.awt.*;
 
 public class Boss extends Enemy
 {
+    Image boss = Toolkit.getDefaultToolkit().getImage("images/ufo.png");
+
     public Boss(int vidasJefe)
     {
         super(vidasJefe);
@@ -12,6 +16,8 @@ public class Boss extends Enemy
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.drawImage(boss, posx, posy, null);
     }
 
     public void muerteJefeHileraA(){
@@ -19,7 +25,7 @@ public class Boss extends Enemy
         //Destruye al resto de enemigos comunes
     }
 
-    public void alternatePositionInB()
+    public void alternatePositionInB(CircularLinkedList list)
     {
 
     }

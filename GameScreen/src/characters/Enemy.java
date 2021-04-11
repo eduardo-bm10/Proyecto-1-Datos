@@ -2,13 +2,17 @@ package characters;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
 public class Enemy extends JPanel
 {
-    int lives;
+    private static boolean RIGHT = true;
+    private static boolean LEFT = false;
 
-    public Rectangle2D.Float enemigo = new Rectangle2D.Float(10, 10, 80, 70);
+    int lives;
+    protected int posx = 10;
+    protected int posy = 10;
+
+    Image enemyImage = Toolkit.getDefaultToolkit().getImage("images/med2.png");
 
     public Enemy(int lives)
     {
@@ -19,17 +23,37 @@ public class Enemy extends JPanel
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setColor(Color.orange);
-        g2D.fill(enemigo);
+        g2D.drawImage(enemyImage, posx, posy, null);
+
+        System.out.println("paint enemy");
     }
 
     public void movimientoEnemigo()
     {
-        while (enemigo.x < 800 & enemigo.y < 400) {
-            enemigo.x += 5;
-            enemigo.y += 5;
+        while (posx < 800 & RIGHT)
+        {
+            posx += 10;
+            posy += 1;
             repaint();
-            try {Thread.sleep(10); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+            try {Thread.sleep(100); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+
+            if (posx == 800)
+            {
+                RIGHT = false;
+                LEFT = true;
+            }
+        }
+        while (posx > 0 & LEFT)
+        {
+            posx -= 10;
+            posy += 1;
+            repaint();
+            try {Thread.sleep(100); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+            if (posx == 0)
+            {
+                LEFT = false;
+                RIGHT = true;
+            }
         }
     }
 

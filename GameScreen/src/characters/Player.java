@@ -10,7 +10,7 @@ import java.awt.event.MouseEvent;
 public class Player extends JPanel
 {
     private int posx = 400;
-    private int posy = 400;
+    private final int posy = 500;
 
     Movement movimiento = new Movement();
 
@@ -23,7 +23,8 @@ public class Player extends JPanel
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paint(Graphics g)
+    {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
         g2D.drawImage(playerImage, posx, posy, null);
@@ -37,27 +38,23 @@ public class Player extends JPanel
         @Override
         public void mouseMoved(MouseEvent e) {
             int dx = e.getX() - x;
-            int dy = e.getY() - y;
 
             if (e.getComponent().contains(posx, posy))
             {
                 posx += dx;
-                posy += dy;
                 repaint();
             }
             else{
                 posx = e.getX() - 40;
-                posy = e.getY() - 50;
             }
             x += dx;
-            y += dy;
         }
 
         @Override
         public void mouseClicked(MouseEvent e) {
             PlayerMissile laser = new PlayerMissile(posx, posy);
 
-            Display.window.add(laser);
+            Display.window.add(laser, BorderLayout.NORTH);
         }
     }
 }
