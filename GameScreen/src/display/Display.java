@@ -1,8 +1,9 @@
 package display;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+
 import characters.Player;
 import list.types.Row;
 
@@ -17,17 +18,19 @@ public class Display extends JFrame {
     private int AVERAGE_FPS = FPS;
 
     public static JFrame window = new JFrame();
-    JPanel color = new JPanel();
+
+    BufferedImage cursor = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
+    Cursor blank = Toolkit.getDefaultToolkit().createCustomCursor(cursor, new Point(0,0), "blank cursor");
 
     public Display(){
-        color.setBackground(Color.GREEN);
-        window.add(color);
         window.setTitle("Space Invaders");
         window.setSize(WIDTH,HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(true);
+        window.setResizable(false);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
+
+        window.getContentPane().setCursor(blank);
 
         addPlayerToScreen();
     }
