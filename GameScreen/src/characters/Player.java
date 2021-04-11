@@ -1,18 +1,20 @@
 package characters;
 
 import shooting.PlayerMissile;
-import display.Game;
+import display.Display;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.geom.Rectangle2D;
 
 public class Player extends JPanel
 {
-    public Rectangle2D.Float jugador = new Rectangle2D.Float(350, 400, 50, 70);
+    private int posx = 400;
+    private int posy = 400;
+
     Movement movimiento = new Movement();
-    PlayerMissile disparo;
+
+    Image playerImage = Toolkit.getDefaultToolkit().getImage("images/player.png");
 
     public Player()
     {
@@ -24,8 +26,7 @@ public class Player extends JPanel
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setColor(Color.RED);
-        g2D.fill(jugador);
+        g2D.drawImage(playerImage, posx, posy, null);
     }
 
     public class Movement extends MouseAdapter
@@ -38,15 +39,15 @@ public class Player extends JPanel
             int dx = e.getX() - x;
             int dy = e.getY() - y;
 
-            if (jugador.getBounds2D().contains(x, y))
+            if (e.getComponent().contains(posx, posy))
             {
-                jugador.x += dx;
-                jugador.y += dy;
+                posx += dx;
+                posy += dy;
                 repaint();
             }
             else{
-                jugador.x = e.getX() - 40;
-                jugador.y = e.getY() - 50;
+                posx = e.getX() - 40;
+                posy = e.getY() - 50;
             }
             x += dx;
             y += dy;
@@ -54,14 +55,9 @@ public class Player extends JPanel
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            disparo = new PlayerMissile(jugador.x - 40, jugador.y - 50);
+            PlayerMissile laser = new PlayerMissile(posx, posy);
 
-            disparo.setDoubleBuffered(true);
-            Game.ventana.add(disparo);
-
-            disparo.movimientoDisparo();
-
-            System.out.println("SI");
+            Display.window.add(laser);
         }
     }
 }
