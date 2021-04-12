@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class Enemy extends JPanel
 {
+    public String aqui = "Enemigo";
     private static boolean RIGHT = true;
     private static boolean LEFT = false;
 
@@ -24,20 +25,18 @@ public class Enemy extends JPanel
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
         g2D.drawImage(enemyImage, posx, posy, null);
-
-        System.out.println("paint enemy");
     }
 
     public void movimientoEnemigo()
     {
         while (posx < 800 & RIGHT)
         {
-            posx += 10;
+            posx += 15;
             posy += 1;
             repaint();
-            try {Thread.sleep(100); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+            try {Thread.sleep(50); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
 
-            if (posx == 800)
+            if (posx >= 800)
             {
                 RIGHT = false;
                 LEFT = true;
@@ -45,11 +44,11 @@ public class Enemy extends JPanel
         }
         while (posx > 0 & LEFT)
         {
-            posx -= 10;
+            posx -= 15;
             posy += 1;
             repaint();
-            try {Thread.sleep(100); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
-            if (posx == 0)
+            try {Thread.sleep(50); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+            if (posx <= 0)
             {
                 LEFT = false;
                 RIGHT = true;

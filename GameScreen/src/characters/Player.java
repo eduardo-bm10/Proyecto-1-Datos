@@ -33,7 +33,6 @@ public class Player extends JPanel
     public class Movement extends MouseAdapter
     {
         public int x;
-        public int y;
 
         @Override
         public void mouseMoved(MouseEvent e) {
@@ -51,8 +50,16 @@ public class Player extends JPanel
         }
 
         @Override
-        public void mouseClicked(MouseEvent e) {
+        public void mouseClicked(MouseEvent e)
+        {
             PlayerMissile laser = new PlayerMissile(posx, posy);
+
+            laser.running = true;
+
+            Thread t = new Thread(laser);
+            t.start();
+
+            System.out.println("Click");
 
             Display.window.add(laser, BorderLayout.NORTH);
         }
