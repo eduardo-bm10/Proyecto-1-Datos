@@ -1,1 +1,3 @@
 theme: jekyll-theme-slate
+title: Proyecto I Algoritmos y Estructuras de Datos I
+description: El proyecto consiste en una réplica del videojuego "Space Invaders", en el cual se hará uso de algunas estructuras de datos lineales, entre ellas listas enlazadas y listas circulares.El jugador, quien controla a una nave en la parte inferior de la pantalla, debe destruir enemigos que vienen de la parte superior mediante disparos, y así lograr una determinada puntuación
