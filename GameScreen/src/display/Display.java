@@ -1,11 +1,11 @@
 package display;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
 import characters.Player;
 import list.types.Row;
+import characters.Enemy;
 
 public class Display extends JFrame {
 
@@ -35,27 +35,14 @@ public class Display extends JFrame {
         addPlayerToScreen();
     }
 
-    public void addRowsToScreen(int type)
-    {
-        Row row = new Row();
-
-        if (type == 1)
-            row.createBasic();
-        else if (type == 2)
-            row.createClassA();
-        else if (type == 3)
-            row.createClassB();
-        else if (type == 4)
-            row.createClassC();
-        else if (type == 5)
-            row.createClassD();
-        else
-            row.createClassE();
-
-    }
     public void addPlayerToScreen()
     {
         Player jugador = new Player();
+        //Enemy prueba = new Enemy(1);
+
+        //window.add(prueba);
         window.add(jugador);
+
+        //prueba.movimientoEnemigo();
     }
 }
