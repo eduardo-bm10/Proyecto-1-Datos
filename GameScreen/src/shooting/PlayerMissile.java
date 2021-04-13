@@ -3,47 +3,47 @@ package shooting;
 
 import display.Display;
 import java.awt.*;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class PlayerMissile extends JPanel
+public class PlayerMissile implements Runnable
 {
+    public boolean running;
     private int x;
     private int y;
 
     Image shootImg = Toolkit.getDefaultToolkit().createImage("images/laserBlue01.png");
+    public JLabel shoot = new JLabel(new ImageIcon(shootImg));
+
 
     public PlayerMissile(int x, int y)
     {
         this.x = x;
         this.y = y;
-
-        System.out.println("Constructor Disparo");
     }
 
     @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(shootImg, x, y, null);
-
-        System.out.println("paint");
+    public void run()
+    {
+        if (running)
+        {
+            movimientoDisparo();
+        }
     }
 
     public void movimientoDisparo()
     {
         final int velocity = 10;
-
         while (y >= 0)
         {
             y -= velocity;
-            repaint();
+            shoot.setLocation(this.x, this.y);
             try
             {
-                Thread.sleep(10);
+                Thread.sleep(50);
             }
             catch (InterruptedException e)
             {
-                System.err.println("Interrupted exception ocurred");
+                e.printStackTrace();
             }
         }
     }

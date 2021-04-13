@@ -2,38 +2,32 @@ package characters;
 
 import shooting.PlayerMissile;
 import display.Display;
-import javax.swing.JPanel;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Player extends JPanel
+public class Player
 {
     private int posx = 400;
     private final int posy = 500;
 
     Movement movimiento = new Movement();
 
-    Image playerImage = Toolkit.getDefaultToolkit().getImage("images/player.png");
+    Image img = Toolkit.getDefaultToolkit().getImage("images/player.png");
+    public JLabel player = new JLabel(new ImageIcon(img));
 
     public Player()
     {
-        addMouseMotionListener(movimiento);
-        addMouseListener(movimiento);
-    }
-
-    @Override
-    public void paint(Graphics g)
-    {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(playerImage, posx, posy, null);
+        player.setLocation(posx, posy);
+        Display.panel.addMouseMotionListener(movimiento);
+        Display.panel.addMouseListener(movimiento);
     }
 
     public class Movement extends MouseAdapter
     {
         public int x;
-        public int y;
 
         @Override
         public void mouseMoved(MouseEvent e) {
@@ -42,19 +36,28 @@ public class Player extends JPanel
             if (e.getComponent().contains(posx, posy))
             {
                 posx += dx;
-                repaint();
+                player.setLocation(posx, posy);
             }
             else{
                 posx = e.getX() - 40;
+                player.setLocation(posx, posy);
             }
             x += dx;
         }
 
         @Override
-        public void mouseClicked(MouseEvent e) {
+        public void mouseClicked(MouseEvent e)
+        {
             PlayerMissile laser = new PlayerMissile(posx, posy);
 
-            Display.window.add(laser, BorderLayout.NORTH);
+            laser.running = true;
+
+            Display.panel.add(laser.shoot);
+
+            Thread t = new Thread(laser);
+            t.start();
+
+            System.out.println("Click");
         }
     }
 }

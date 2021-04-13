@@ -3,7 +3,7 @@ package characters;
 import javax.swing.*;
 import java.awt.*;
 
-public class Enemy extends JPanel
+public class Enemy
 {
     private static boolean RIGHT = true;
     private static boolean LEFT = false;
@@ -13,31 +13,25 @@ public class Enemy extends JPanel
     protected int posy = 10;
 
     Image enemyImage = Toolkit.getDefaultToolkit().getImage("images/med2.png");
+    public JLabel enemigo = new JLabel(new ImageIcon(enemyImage));
 
     public Enemy(int lives)
     {
+        enemigo.setLocation(posx, posy);
         this.lives = lives;
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(enemyImage, posx, posy, null);
-
-        System.out.println("paint enemy");
     }
 
     public void movimientoEnemigo()
     {
         while (posx < 800 & RIGHT)
         {
-            posx += 10;
+            posx += 15;
             posy += 1;
-            repaint();
-            try {Thread.sleep(100); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+            enemigo.setLocation(posx, posy);
 
-            if (posx == 800)
+            try {Thread.sleep(50); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+
+            if (posx >= 800)
             {
                 RIGHT = false;
                 LEFT = true;
@@ -45,11 +39,12 @@ public class Enemy extends JPanel
         }
         while (posx > 0 & LEFT)
         {
-            posx -= 10;
+            posx -= 15;
             posy += 1;
-            repaint();
-            try {Thread.sleep(100); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
-            if (posx == 0)
+            enemigo.setLocation(posx, posy);
+
+            try {Thread.sleep(50); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+            if (posx <= 0)
             {
                 LEFT = false;
                 RIGHT = true;
