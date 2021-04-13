@@ -17,7 +17,11 @@ public class Row implements RowFactory
         for (int i = 0; i < 7; i++)
         {
             list.insertLast(enemigo);
-            //Display.window.add(list.tail.getEnemigo());
+
+            Display.panel.add(list.tail.getEnemigo().enemigo);
+            list.tail.enemigo.movimientoEnemigo();
+
+            try{ Thread.sleep(100);} catch (InterruptedException e){e.printStackTrace();}
         }
     }
 
@@ -30,7 +34,7 @@ public class Row implements RowFactory
         {
             if (i == 4)
                 list.insertFirst(jefe);
-            list.insertFirst(enemigo);
+            //list.insertFirst(enemigo);
         }
     }
 

@@ -1,50 +1,44 @@
 package shooting;
 
-
-import display.Display;
-import java.awt.*;
 import javax.swing.*;
+import objectsImages.ImageLoader;
 
-public class PlayerMissile implements Runnable
+public class PlayerMissile extends JLabel implements Runnable
 {
-    public boolean running;
-    private int x;
+    private final int x;
     private int y;
 
-    Image shootImg = Toolkit.getDefaultToolkit().createImage("images/laserBlue01.png");
-    public JLabel shoot = new JLabel(new ImageIcon(shootImg));
-
+    public boolean run = false;
 
     public PlayerMissile(int x, int y)
     {
+        super(ImageLoader.loadImage("images/laserBlue01.png"));
         this.x = x;
         this.y = y;
     }
 
-    @Override
-    public void run()
+    public void shootMovement()
     {
-        if (running)
-        {
-            movimientoDisparo();
-        }
-    }
-
-    public void movimientoDisparo()
-    {
-        final int velocity = 10;
         while (y >= 0)
         {
-            y -= velocity;
-            shoot.setLocation(this.x, this.y);
+            if (y <= 0)
+                this.run = false;
+            y -= 10;
+            setLocation(x, y);
             try
             {
-                Thread.sleep(50);
+                Thread.sleep(1000);
             }
             catch (InterruptedException e)
             {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void run() {
+        if (run)
+            shootMovement();
     }
 }
