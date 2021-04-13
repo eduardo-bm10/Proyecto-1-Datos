@@ -15,13 +15,6 @@ public class Boss extends Enemy
         super(vidasJefe);
     }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(boss, posx, posy, null);
-    }
-
     public void muerteJefeHileraA(){
         super.muerteEnemigo();
         //Destruye al resto de enemigos comunes
