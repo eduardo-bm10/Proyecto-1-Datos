@@ -3,15 +3,17 @@ package shooting;
 
 import display.Display;
 import java.awt.*;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class PlayerMissile extends JPanel implements Runnable
+public class PlayerMissile implements Runnable
 {
     public boolean running;
     private int x;
     private int y;
 
     Image shootImg = Toolkit.getDefaultToolkit().createImage("images/laserBlue01.png");
+    public JLabel shoot = new JLabel(new ImageIcon(shootImg));
+
 
     public PlayerMissile(int x, int y)
     {
@@ -20,22 +22,11 @@ public class PlayerMissile extends JPanel implements Runnable
     }
 
     @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(shootImg, x, y, null);
-    }
-
-    @Override
     public void run()
     {
         if (running)
         {
-            System.out.println("running");
             movimientoDisparo();
-        }
-        else {
-            System.out.println("not running");
         }
     }
 
@@ -45,11 +36,10 @@ public class PlayerMissile extends JPanel implements Runnable
         while (y >= 0)
         {
             y -= velocity;
-            repaint();
-            System.out.println("GG");
+            shoot.setLocation(this.x, this.y);
             try
             {
-                Thread.sleep(10);
+                Thread.sleep(50);
             }
             catch (InterruptedException e)
             {

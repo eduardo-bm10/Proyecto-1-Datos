@@ -17,12 +17,14 @@ public class Display extends JFrame {
     private double delta =0;
     private int AVERAGE_FPS = FPS;
 
-    public static JFrame window = new JFrame();
-
     BufferedImage cursor = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
     Cursor blank = Toolkit.getDefaultToolkit().createCustomCursor(cursor, new Point(0,0), "blank cursor");
 
+    public static JPanel panel = new JPanel();
+
     public Display(){
+        JFrame window = new JFrame();
+
         window.setTitle("Space Invaders");
         window.setSize(WIDTH,HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,7 +32,15 @@ public class Display extends JFrame {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
 
+        window.setLayout(null);
+
         window.getContentPane().setCursor(blank);
+
+        window.add(panel);
+
+        panel.setSize(WIDTH, HEIGHT);
+        panel.setVisible(true);
+        panel.setBackground(Color.DARK_GRAY);
 
         addPlayerToScreen();
     }
@@ -38,11 +48,11 @@ public class Display extends JFrame {
     public void addPlayerToScreen()
     {
         Player jugador = new Player();
-        //Enemy prueba = new Enemy(1);
+        Enemy prueba = new Enemy(1);
 
-        //window.add(prueba);
-        window.add(jugador);
+        panel.add(jugador.player);
+        panel.add(prueba.enemigo);
 
-        //prueba.movimientoEnemigo();
+        prueba.movimientoEnemigo();
     }
 }
