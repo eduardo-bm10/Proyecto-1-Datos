@@ -2,25 +2,21 @@ package characters;
 
 import shooting.PlayerMissile;
 import display.Display;
-
+import objectsImages.ImageLoader;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Player
+public class Player extends JLabel
 {
     private int posx = 400;
     private final int posy = 500;
 
     Movement movimiento = new Movement();
 
-    Image img = Toolkit.getDefaultToolkit().getImage("images/player.png");
-    public JLabel player = new JLabel(new ImageIcon(img));
-
     public Player()
     {
-        player.setLocation(posx, posy);
+        super(ImageLoader.loadImage("images/player.png"));
         Display.panel.addMouseMotionListener(movimiento);
         Display.panel.addMouseListener(movimiento);
     }
@@ -36,11 +32,10 @@ public class Player
             if (e.getComponent().contains(posx, posy))
             {
                 posx += dx;
-                player.setLocation(posx, posy);
+                setLocation(posx, posy);
             }
             else{
                 posx = e.getX() - 40;
-                player.setLocation(posx, posy);
             }
             x += dx;
         }
@@ -50,14 +45,9 @@ public class Player
         {
             PlayerMissile laser = new PlayerMissile(posx, posy);
 
-            laser.running = true;
-
-            Display.panel.add(laser.shoot);
-
-            Thread t = new Thread(laser);
-            t.start();
-
-            System.out.println("Click");
+            Thread runLaser = new Thread(laser);
+            runLaser.start();
+            Display.panel.add(laser);
         }
     }
 }

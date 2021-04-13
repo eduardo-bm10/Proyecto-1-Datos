@@ -6,6 +6,8 @@ import java.awt.image.BufferedImage;
 import characters.Player;
 import list.types.Row;
 import characters.Enemy;
+import objectsImages.ImageLoader;
+import shooting.PlayerMissile;
 
 public class Display extends JFrame {
 
@@ -26,11 +28,12 @@ public class Display extends JFrame {
         JFrame window = new JFrame();
 
         window.setTitle("Space Invaders");
-        window.setSize(WIDTH,HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
+        window.setSize(WIDTH,HEIGHT);
         window.setLocationRelativeTo(null);
+        window.setResizable(false);
         window.setVisible(true);
+        window.setIconImage(Toolkit.getDefaultToolkit().getImage("images/player.png"));
 
         window.setLayout(null);
 
@@ -47,12 +50,9 @@ public class Display extends JFrame {
 
     public void addPlayerToScreen()
     {
-        Player jugador = new Player();
-        Enemy prueba = new Enemy(1);
+        Row hilera = new Row();
+        Player player = new Player();
 
-        panel.add(jugador.player);
-        panel.add(prueba.enemigo);
-
-        prueba.movimientoEnemigo();
+        panel.add(player);
     }
 }
