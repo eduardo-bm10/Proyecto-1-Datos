@@ -54,5 +54,6 @@ public class Display extends JFrame {
         Player player = new Player();
 
         panel.add(player);
+        panel.updateUI();
     }
 }

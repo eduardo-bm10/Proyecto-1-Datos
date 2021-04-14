@@ -16,7 +16,7 @@ public class Player extends JLabel
 
     public Player()
     {
-        super(ImageLoader.loadImage("images/player.png"));
+        super(ImageLoader.loadImage("images/player.png"), JLabel.CENTER);
         Display.panel.addMouseMotionListener(movimiento);
         Display.panel.addMouseListener(movimiento);
     }
@@ -48,6 +48,7 @@ public class Player extends JLabel
             Thread runLaser = new Thread(laser);
             runLaser.start();
             Display.panel.add(laser);
+            Display.panel.updateUI();
         }
     }
 }

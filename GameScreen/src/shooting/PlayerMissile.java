@@ -8,11 +8,9 @@ public class PlayerMissile extends JLabel implements Runnable
     private final int x;
     private int y;
 
-    public boolean run = false;
-
     public PlayerMissile(int x, int y)
     {
-        super(ImageLoader.loadImage("images/laserBlue01.png"));
+        super(ImageLoader.loadImage("images/laserBlue01.png"), JLabel.CENTER);
         this.x = x;
         this.y = y;
     }
@@ -21,13 +19,11 @@ public class PlayerMissile extends JLabel implements Runnable
     {
         while (y >= 0)
         {
-            if (y <= 0)
-                this.run = false;
-            y -= 10;
+            y -= 20;
             setLocation(x, y);
             try
             {
-                Thread.sleep(1000);
+                Thread.sleep(10);
             }
             catch (InterruptedException e)
             {
@@ -38,7 +34,6 @@ public class PlayerMissile extends JLabel implements Runnable
 
     @Override
     public void run() {
-        if (run)
-            shootMovement();
+        shootMovement();
     }
 }
