@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import characters.Player;
-import list.types.Row;
+import list.types.BasicRow;
 import characters.Enemy;
 import objectsImages.ImageLoader;
 import shooting.PlayerMissile;
@@ -46,14 +46,22 @@ public class Display extends JFrame {
         panel.setBackground(Color.DARK_GRAY);
 
         addPlayerToScreen();
+
+        addBasicRow();
     }
 
     public void addPlayerToScreen()
     {
-        Row hilera = new Row();
         Player player = new Player();
-
         panel.add(player);
         panel.updateUI();
+    }
+
+    public void addBasicRow()
+    {
+        BasicRow hilera = new BasicRow();
+        hilera.createBasicRow();
+
+        hilera.moverHilera();
     }
 }

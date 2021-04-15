@@ -5,8 +5,9 @@ public class Node<T> {
     private Node<T> next;
 
 
-    public Node(){
-        value = null;
+    public Node()
+    {
+        this.value = null;
         next = null;
 
     }

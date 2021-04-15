@@ -1,5 +1,5 @@
 package list.types;
-
+/*
 import characters.Boss;
 import characters.Enemy;
 import display.Display;
@@ -62,4 +62,4 @@ public class Row implements RowFactory
 
     }
 }
-
+*/

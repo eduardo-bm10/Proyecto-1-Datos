@@ -16,8 +16,6 @@ public class Boss extends Enemy
     }
 
     public void muerteJefeHileraA(){
-        super.muerteEnemigo();
-        //Destruye al resto de enemigos comunes
     }
 
     public void alternatePositionInB(CircularLinkedList list)
@@ -27,7 +25,5 @@ public class Boss extends Enemy
 
     public void muerteJefeHileraC()
     {
-        super.muerteEnemigo();
-        //Otro enemigo comun se convierte en el jefe
     }
 }

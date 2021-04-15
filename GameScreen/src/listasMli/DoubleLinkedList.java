@@ -1,6 +1,8 @@
 package listasMli;
 
-public class DoubleLinkedList<T> implements List<T> {
+import characters.Enemy;
+
+public class DoubleLinkedList<T extends Enemy> implements List<T> {
     private DoubleNode<T> head;
     private int size;
 
@@ -10,7 +12,8 @@ public class DoubleLinkedList<T> implements List<T> {
     }
 
     @Override
-    public void add(T value) {
+    public void add(T value)
+    {
         DoubleNode<T> newNode = new DoubleNode<T>();
         newNode.setValue(value);
         if(head == null) {

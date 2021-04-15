@@ -1,6 +1,8 @@
 package shooting;
 
 import javax.swing.*;
+
+import display.Display;
 import objectsImages.ImageLoader;
 
 public class PlayerMissile extends JLabel implements Runnable
@@ -10,7 +12,7 @@ public class PlayerMissile extends JLabel implements Runnable
 
     public PlayerMissile(int x, int y)
     {
-        super(ImageLoader.loadImage("images/laserBlue01.png"), JLabel.CENTER);
+        super(ImageLoader.loadImage("images/laserBlue01.png"));
         this.x = x;
         this.y = y;
     }
@@ -19,11 +21,13 @@ public class PlayerMissile extends JLabel implements Runnable
     {
         while (y >= 0)
         {
-            y -= 20;
+            if (y <= 0)
+                Display.panel.remove(this);
+            y -= 10;
             setLocation(x, y);
             try
             {
-                Thread.sleep(10);
+                Thread.sleep(15);
             }
             catch (InterruptedException e)
             {

@@ -16,7 +16,7 @@ public class Player extends JLabel
 
     public Player()
     {
-        super(ImageLoader.loadImage("images/player.png"), JLabel.CENTER);
+        super(ImageLoader.loadImage("images/player.png"));
         Display.panel.addMouseMotionListener(movimiento);
         Display.panel.addMouseListener(movimiento);
     }

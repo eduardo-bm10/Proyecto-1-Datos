@@ -1,9 +1,9 @@
 package characters;
 
+import objectsImages.ImageLoader;
 import javax.swing.*;
-import java.awt.*;
 
-public class Enemy
+public class Enemy extends JLabel implements Runnable
 {
     private static boolean RIGHT = true;
     private static boolean LEFT = false;
@@ -12,48 +12,49 @@ public class Enemy
     protected int posx = 10;
     protected int posy = 10;
 
-    Image enemyImage = Toolkit.getDefaultToolkit().getImage("images/med2.png");
-    public JLabel enemigo = new JLabel(new ImageIcon(enemyImage));
-
     public Enemy(int lives)
     {
-        enemigo.setLocation(posx, posy);
+        super(ImageLoader.loadImage("images/med2.png"));
         this.lives = lives;
     }
 
     public void movimientoEnemigo()
     {
-        while (posx < 800 & RIGHT)
+        while (posy <= 600)
         {
-            posx += 15;
-            posy += 1;
-            enemigo.setLocation(posx, posy);
-
-            try {Thread.sleep(50); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
-
-            if (posx >= 800)
-            {
-                RIGHT = false;
-                LEFT = true;
+            while (posx < 800 && RIGHT) {
+                posx += 10;
+                setLocation(posx, posy);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    System.err.print("Algo salio mal");
+                }
+                if (posx >= 800) {
+                    RIGHT = false;
+                    LEFT = true;
+                    posy += 50;
+                }
             }
-        }
-        while (posx > 0 & LEFT)
-        {
-            posx -= 15;
-            posy += 1;
-            enemigo.setLocation(posx, posy);
-
-            try {Thread.sleep(50); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
-            if (posx <= 0)
-            {
-                LEFT = false;
-                RIGHT = true;
+            while (posx > 0 && LEFT) {
+                posx -= 10;
+                setLocation(posx, posy);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    System.err.print("Algo salio mal");
+                }
+                if (posx <= 0) {
+                    LEFT = false;
+                    RIGHT = true;
+                    posy += 50;
+                }
             }
         }
     }
 
-    public void muerteEnemigo()
-    {
-        //El enemigo desaparece
+    @Override
+    public void run() {
+        movimientoEnemigo();
     }
 }
