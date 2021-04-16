@@ -178,6 +178,12 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 ◆ Kevin Lobo: 
 
 ◆ Alessandro Hidalgo:
+    ◆ Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
+    ◆ Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
+    ◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
+    ◆ Como Usuario: quiero poder ver a que clase de enemigos me enfrento.
+    ◆ Como Usuario: quiero ver el puntaje que llevo actualmente en pantalla.
+    
 ```
 
 ### Problemas o bugs encontrados:
