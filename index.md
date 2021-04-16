@@ -187,7 +187,7 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
     ◆
     ◆
 
-◆ Gabriel Lobo: 
+◆ Kevin Lobo: 
     
     ◆
     ◆
@@ -253,6 +253,6 @@ En la siguiente imagen se muestra el **diagrama de clases** que realizamos al in
 ◆ Eduardo Bolivar.
 ◆ Melissa Oviedo. 
 ◆ Javier Tenorio.
-◆ Gabriel Lobo.
+◆ Kevin Gabriel Lobo.
 ◆ Alessandro Hidalgo.
 ```
