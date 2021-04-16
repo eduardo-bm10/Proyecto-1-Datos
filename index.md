@@ -64,6 +64,15 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 
 
 
+
+(por hacer)
+◆ Descomposición de cada user story en tareas.
+◆ Asignación de tareas e historias entre los miembros del equipo
+
+
+
+
+
 ◆ Asignación de tareas e historias entre los miembros del equipo
 
 
