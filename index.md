@@ -172,12 +172,31 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
     
 
 ◆ Melissa Oviedo: 
+    
+    ◆
+    ◆
+    ◆
+    ◆
+    ◆
 
 ◆ Javier Tenorio:
 
+    ◆
+    ◆
+    ◆
+    ◆
+    ◆
+
 ◆ Kevin Lobo: 
+    
+    ◆
+    ◆
+    ◆
+    ◆
+    ◆
 
 ◆ Alessandro Hidalgo:
+
     ◆ Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
     ◆ Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
     ◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
@@ -225,9 +244,9 @@ En la siguiente imagen se muestra el **diagrama de clases** que realizamos al in
 
 ## Editores:
 ```markdown
-◆ Eduardo Bolivar
-◆ Melissa Oviedo 
-◆ Javier Tenorio
-◆ Kevin Lobo 
-◆ Alessandro Hidalgo
+◆ Eduardo Bolivar.
+◆ Melissa Oviedo. 
+◆ Javier Tenorio.
+◆ Kevin Lobo.
+◆ Alessandro Hidalgo.
 ```
