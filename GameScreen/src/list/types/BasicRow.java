@@ -6,7 +6,7 @@ import listasMli.DoubleLinkedList;
 
 public class BasicRow
 {
-    DoubleLinkedList hilera = new DoubleLinkedList<>();
+    DoubleLinkedList hilera = new DoubleLinkedList();
 
     public void createBasicRow()
     {
@@ -19,15 +19,11 @@ public class BasicRow
     public void moverHilera()
     {
         int i = 0;
-
-
         while (i < 7)
         {
             Display.panel.add(hilera.get(i));
             Display.panel.updateUI();
-
             new Thread(hilera.get(i)).start();
-
             i++;
             try
             {

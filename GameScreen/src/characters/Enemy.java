@@ -18,11 +18,16 @@ public class Enemy extends JLabel implements Runnable
         this.lives = lives;
     }
 
+    protected Enemy(ImageIcon img)
+    {
+        super(img);
+    }
+
     public void movimientoEnemigo()
     {
         while (posy <= 600)
         {
-            while (posx < 800 && RIGHT) {
+            while (posx < 750 && RIGHT) {
                 posx += 10;
                 setLocation(posx, posy);
                 try {
@@ -30,12 +35,13 @@ public class Enemy extends JLabel implements Runnable
                 } catch (InterruptedException e) {
                     System.err.print("Algo salio mal");
                 }
-                if (posx >= 800) {
+                if (posx >= 750) {
                     RIGHT = false;
                     LEFT = true;
-                    posy += 50;
                 }
             }
+            posy += 30;
+
             while (posx > 0 && LEFT) {
                 posx -= 10;
                 setLocation(posx, posy);
@@ -47,9 +53,9 @@ public class Enemy extends JLabel implements Runnable
                 if (posx <= 0) {
                     LEFT = false;
                     RIGHT = true;
-                    posy += 50;
                 }
             }
+            posy += 30;
         }
     }
 
