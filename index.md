@@ -157,8 +157,27 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
     * Crear y añadir un JLabel que informe la siguiente hilera en camino.
 ```
 
-(por hacer)
-◆ Asignación de tareas e historias entre los miembros del equipo
+### Asignación de tareas e historias entre los miembros del equipo
+```markdown
+◆ Eduardo Bolivar:
+
+    # Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
+    # Como Desarrollador: quiero implementar el movimiento del personaje y delimitar un limite de altura
+      en el que esteno pueda subir más.
+    # Como Usuario: quiero disparar a los enemigos con click izquierdo.
+    # Como Desarrollador: quiero crear la hilera de enemigos y que esta se despliegue en la pantalla.
+    # Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
+    # Como Usuario: quiero enfrentarme a hileras de enemigos con diferentes características.
+    # Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
+    
+
+◆ Melissa Oviedo: 
+
+◆ Javier Tenorio:
+
+◆ Kevin Lobo: 
+
+◆ Alessandro Hidalgo:
 
 ### Problemas o bugs encontrados:
 ```markdown
