@@ -173,11 +173,14 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 
 ◆ Melissa Oviedo: 
     
-    ◆
-    ◆
-    ◆
-    ◆
-    ◆
+    ◆ Como Desarrollador: Quiero crear una pantalla en la que puedo colocar los demás componentes del juego.
+    ◆ Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
+    ◆ Como Desarrollador: quiero implementar el movimiento del personaje y delimitar un limite de altura
+      en el que esteno pueda subir más.
+    ◆ Como Desarrollador: quiero implementar estructuras de datos lineales en mi programa.
+    ◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
+    ◆ Como Usuario: quiero enfrentarme a diversos niveles de dificultad.
+    ◆ Como Desarrollador : quiero lograr que las hileras de enemigos varíen aleatoriamente.
 
 ◆ Javier Tenorio:
 
