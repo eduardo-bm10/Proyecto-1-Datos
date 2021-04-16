@@ -178,6 +178,7 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 ◆ Kevin Lobo: 
 
 ◆ Alessandro Hidalgo:
+```
 
 ### Problemas o bugs encontrados:
 ```markdown
