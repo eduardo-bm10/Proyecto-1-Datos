@@ -67,108 +67,108 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 ```markdown
 ◆ Como Desarrollador: Quiero crear una pantalla en la que puedo colocar los demás componentes del juego.
     
-    * Crear clase Display para la pantalla principal.
-    * Modificar cada parámetro necesario de la ventana.
-    * Crear el panel principal donde se ubicarán todos los objetos en juego.
+    ◆ Crear clase Display para la pantalla principal.
+    ◆ Modificar cada parámetro necesario de la ventana.
+    ◆ Crear el panel principal donde se ubicarán todos los objetos en juego.
 
 ◆ Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
 
-    * Crear clase Player y sus atributos.
-    * Crear la clase de Movimiento que modifica las coordenadas mediante MouseEvent.
-    * Crear método para disparar.
-    * Añadir y testear la nave en pantalla utilizando el mouse.
-    * Buscar una imagen png representativa para el jugador.
+    ◆ Crear clase Player y sus atributos.
+    ◆ Crear la clase de Movimiento que modifica las coordenadas mediante MouseEvent.
+    ◆ Crear método para disparar.
+    ◆ Añadir y testear la nave en pantalla utilizando el mouse.
+    ◆ Buscar una imagen png representativa para el jugador.
 
 ◆ Como Desarrollador: quiero implementar el movimiento del personaje y delimitar un limite de altura
   en el que este no pueda subir más.
   
-    * Utilizar métodos Override de MouseEvent en la clase Movimiento para mover al personaje.
-    * Declarar una variable final para la altura del personaje, y sólo hacer modificable su coordenada x.
-    * Hacer que la nave esté en la misma posición del mouse en todo momento. 
+    ◆ Utilizar métodos Override de MouseEvent en la clase Movimiento para mover al personaje.
+    ◆ Declarar una variable final para la altura del personaje, y sólo hacer modificable su coordenada x.
+    ◆ Hacer que la nave esté en la misma posición del mouse en todo momento. 
 
 ◆ Como Usuario: quiero disparar a los enemigos con click izquierdo.
 
-    * Crear la clase PlayerMissile con todos los atributos y métodos del disparo.
-    * Establecer que sus coordenadas X y Y al inicio sean las mismas que las del jugador.
-    * Crear un método de movimiento que desplace el disparo hacia arriba, modificando su coordenada Y.
-    * Asegurarse de que sólo se genere un objeto PlayerMissile con cada click, ni más ni menos.  
+    ◆ Crear la clase PlayerMissile con todos los atributos y métodos del disparo.
+    ◆ Establecer que sus coordenadas X y Y al inicio sean las mismas que las del jugador.
+    ◆ Crear un método de movimiento que desplace el disparo hacia arriba, modificando su coordenada Y.
+    ◆ Asegurarse de que sólo se genere un objeto PlayerMissile con cada click, ni más ni menos.  
 
 ◆ Como Desarrollador: quiero crear la hilera de enemigos y que esta se despliegue en la pantalla.
 
-    * Crear clase Enemy con sus respectivos atributos y métodos.
-    * Crear las clases para cada hilera requerida (Basic, ClassA, ClassB, ClassC, ClassD, ClassE).
-    * Declarar los principales atributos de las hileras.
-    * Crear un método para crear la hilera, el cual cree una lista enlazada y añada a los enemigos.
-    * Encargarse de mostrar a cada enemigo de la hilera en pantalla.
+    ◆ Crear clase Enemy con sus respectivos atributos y métodos.
+    ◆ Crear las clases para cada hilera requerida (Basic, ClassA, ClassB, ClassC, ClassD, ClassE).
+    ◆ Declarar los principales atributos de las hileras.
+    ◆ Crear un método para crear la hilera, el cual cree una lista enlazada y añada a los enemigos.
+    ◆ Encargarse de mostrar a cada enemigo de la hilera en pantalla.
 
 ◆ Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
 
-    * Crear método de movimiento en la clase Enemy.
-    * Declarar las coordenadas X y Y del enemigo.
-    * Modificar las coordenadas de forma iterativa dentro del método de movimiento, verificando los límites de la pantalla.
+    ◆ Crear método de movimiento en la clase Enemy.
+    ◆ Declarar las coordenadas X y Y del enemigo.
+    ◆ Modificar las coordenadas de forma iterativa dentro del método de movimiento, verificando los límites de la pantalla.
 
 ◆ Como Usuario: quiero ver el puntaje que llevo actualmente en pantalla.
 
-    * Crear clase Points y declarar una variable para la cantidad de puntos.
-    * Crear método que actualice la cantidad de puntos cuando el jugador derrote a un enemigo.
-    * Añadir el contador de puntos al panel principal en forma de JLabel.
+    ◆ Crear clase Points y declarar una variable para la cantidad de puntos.
+    ◆ Crear método que actualice la cantidad de puntos cuando el jugador derrote a un enemigo.
+    ◆ Añadir el contador de puntos al panel principal en forma de JLabel.
 
 ◆ Como Usuario: quiero poder ver a que clase de enemigos me enfrento.
 
-    * Crear y añadir un JLabel que informe el tipo de hilera actual en pantalla.
+    ◆ Crear y añadir un JLabel que informe el tipo de hilera actual en pantalla.
 
 ◆ Como Usuario: quiero enfrentarme a hileras de enemigos con diferentes características.
 
-    * Crear clase Boss y que extienda de Enemy.
-    * Crear método para crear hileras que incluyan al objeto Boss.
-    * Crear método movimientoBoss que alterne al jefe entre los demás enemigos.
-    * Crear hilera que contenga enemigos con diferente cantidad de vidas.
+    ◆ Crear clase Boss y que extienda de Enemy.
+    ◆ Crear método para crear hileras que incluyan al objeto Boss.
+    ◆ Crear método movimientoBoss que alterne al jefe entre los demás enemigos.
+    ◆ Crear hilera que contenga enemigos con diferente cantidad de vidas.
 
 ◆ Como Desarrollador: quiero implementar estructuras de datos lineales en mi programa.
 
-    * Crear clase de DoubleLinkedList y CircularLinkedList con sus respectivos nodos.
-    * Implementar las clases para crear las hileras.
+    ◆ Crear clase de DoubleLinkedList y CircularLinkedList con sus respectivos nodos.
+    ◆ Implementar las clases para crear las hileras.
 
 ◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
 
-    * Modificar y delimitar las coordenada X de la nave mediante el mouse.
+    ◆ Modificar y delimitar las coordenada X de la nave mediante el mouse.
     
 ◆ Como Usuario: quiero enfrentarme a diversos niveles de dificultad.
 
-    * Crear clase Level.
-    * Crear método cambiarDificultad que aumente la velocidad de los enemigos luego de un tiempo.
+    ◆ Crear clase Level.
+    ◆ Crear método cambiarDificultad que aumente la velocidad de los enemigos luego de un tiempo.
 
 ◆ Como Usuario: quiero que mi puntuación pueda ser muy alta.
 
-    * Crear y declarar la variable de la puntuación de tipo "long", en caso de que el jugador realice muchos puntos.
+    ◆ Crear y declarar la variable de la puntuación de tipo "long", en caso de que el jugador realice muchos puntos.
 
 ◆ Como Desarrollador : quiero lograr que si un enemigo llega a la parte inferior de la pantalla el jugador pierda.
 
-    * Crear método muerteJugador que verifique cuando el enemigo toca a la nave, y este automáticamente cierre el juego.
-    * Hacer uso de la clase Box para el propósito del punto anterior.
+    ◆ Crear método muerteJugador que verifique cuando el enemigo toca a la nave, y este automáticamente cierre el juego.
+    ◆ Hacer uso de la clase Box para el propósito del punto anterior.
 
 ◆ Como Desarrollador : quiero lograr que las hileras de enemigos varíen aleatoriamente.
 
-    * Crear método generarHilera, que reciba un número aleatorio del 1 al 6, cada número asignado a un tipo de hilera.
-    * El método generarHilera se ejecuta paralelamente mediante un Thread.
+    ◆ Crear método generarHilera, que reciba un número aleatorio del 1 al 6, cada número asignado a un tipo de hilera.
+    ◆ El método generarHilera se ejecuta paralelamente mediante un Thread.
 
 ◆ Como Usuario: quiero ver en pantalla el tipo de la próxima hilera de enemigos en salir.
 
-    * Crear y añadir un JLabel que informe la siguiente hilera en camino.
+    ◆ Crear y añadir un JLabel que informe la siguiente hilera en camino.
 ```
 
 ### Asignación de tareas e historias entre los miembros del equipo
 ```markdown
 ◆ Eduardo Bolivar:
 
-    # Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
-    # Como Desarrollador: quiero implementar el movimiento del personaje y delimitar un limite de altura
+    ◆ Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
+    ◆ Como Desarrollador: quiero implementar el movimiento del personaje y delimitar un limite de altura
       en el que esteno pueda subir más.
-    # Como Usuario: quiero disparar a los enemigos con click izquierdo.
-    # Como Desarrollador: quiero crear la hilera de enemigos y que esta se despliegue en la pantalla.
-    # Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
-    # Como Usuario: quiero enfrentarme a hileras de enemigos con diferentes características.
-    # Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
+    ◆ Como Usuario: quiero disparar a los enemigos con click izquierdo.
+    ◆ Como Desarrollador: quiero crear la hilera de enemigos y que esta se despliegue en la pantalla.
+    ◆ Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
+    ◆ Como Usuario: quiero enfrentarme a hileras de enemigos con diferentes características.
+    ◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
     
 
 ◆ Melissa Oviedo: 
