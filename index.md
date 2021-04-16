@@ -44,6 +44,22 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 ◆ Como Usuario: quiero ver el puntaje que llevo actualmente en pantalla.
 
 ◆ Como Usuario: quiero poder ver a que clase de enemigos me enfrento.
+
+◆ Como Usuario: quiero enfrentarme a hileras de enemigos con diferentes características.
+
+◆ Como Desarrollador: quiero implementar estructuras de datos lineales en mi programa.
+
+◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
+
+◆ Como Usuario: quiero enfrentarme a diversos niveles de dificultad.
+
+◆ Como Usuario: quiero que mi puntuación pueda ser muy alta.
+
+◆ Como Desarrollador : quiero lograr que si un enemigo llega a la parte inferior de la pantalla el jugador pierda.
+
+◆ Como Desarrollador : quiero lograr que las hileras de enemigos varíen aleatoriamente.
+
+◆ Como Usuario: quiero ver en pantalla el tipo de la próxima hilera de enemigos en salir.
 ```
 
 
