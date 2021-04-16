@@ -63,18 +63,47 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 ```
 
 
+### Tareas por cada User Story:
+```markdown
+◆ Como Desarrollador: Quiero crear una pantalla en la que puedo colocar los demás componentes del juego.
+    * Crear clase Display para la pantalla principal.
+    * Modificar cada parámetro necesario de la ventana.
+    * Crear el panel principal donde se ubicarán todos los objetos en juego.
 
+◆ Como Dessarrollador: quiero crear al personaje y que este se vea en la pantalla.
+
+◆ Como Desarrollador: quiero implementar el movimiento del personaje y delimitar un limite de altura
+  en el que esteno pueda subir más.
+
+◆ Como Usuario: quiero disparar a los enemigos con click izquierdo.
+
+◆ Como Desarrollador: quiero crear la hilera de enemigos y que esta se despliegue en la pantalla.
+
+◆ Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
+
+◆ Como Usuario: quiero ver el puntaje que llevo actualmente en pantalla.
+
+◆ Como Usuario: quiero poder ver a que clase de enemigos me enfrento.
+
+◆ Como Usuario: quiero enfrentarme a hileras de enemigos con diferentes características.
+
+◆ Como Desarrollador: quiero implementar estructuras de datos lineales en mi programa.
+
+◆ Como Usuario: quiero mover la nave hacia los lados utilizando el mouse.
+
+◆ Como Usuario: quiero enfrentarme a diversos niveles de dificultad.
+
+◆ Como Usuario: quiero que mi puntuación pueda ser muy alta.
+
+◆ Como Desarrollador : quiero lograr que si un enemigo llega a la parte inferior de la pantalla el jugador pierda.
+
+◆ Como Desarrollador : quiero lograr que las hileras de enemigos varíen aleatoriamente.
+
+◆ Como Usuario: quiero ver en pantalla el tipo de la próxima hilera de enemigos en salir.
+```
 
 (por hacer)
-◆ Descomposición de cada user story en tareas.
 ◆ Asignación de tareas e historias entre los miembros del equipo
-
-
-
-
-
-◆ Asignación de tareas e historias entre los miembros del equipo
-
 
 ### Problemas o bugs encontrados:
 ```markdown
@@ -86,6 +115,20 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 
 ◆ Se quiere corregir el error a la hora de disparar, hay que minimizar y abrir nuevamente la interfaz 
   para que se muestre en pantalla la acción de disparo.
+  
+◆ La hilera de enemigos se mueve de manera extraña y se desordena.
+
+◆ La nave del jugador aparece en la parte superior de la pantalla cuando aparece otro objeto.
+
+◆ El jefe aún no aparece en pantalla.
+
+◆ La imagen del disparo debería eliminarse al llegar a lo más alto, pero no lo hace.
+
+◆ El JPanel principal a veces no actualiza correctamente los objetos en pantalla.
+
+◆ Cada enemigo de la hilera realiza su movimiento con un Thread diferente.
+
+◆ Los objetos aparecen en la parte superior de la pantalla cuando ya deberían haberse eliminado.
 ```
 
 
@@ -101,9 +144,9 @@ En la siguiente imagen se muestra el **diagrama de clases** que realizamos al in
 
 ## Editores:
 ```markdown
-◆Eduardo Bolivar
-◆Melissa Oviedo 
-◆Javier Tenorio
-◆Gabriel 
-◆Alessandro Hidalgo
+◆ Eduardo Bolivar
+◆ Melissa Oviedo 
+◆ Javier Tenorio
+◆ Kevin Lobo 
+◆ Alessandro Hidalgo
 ```
