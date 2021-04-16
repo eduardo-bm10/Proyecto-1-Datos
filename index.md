@@ -190,11 +190,11 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
     
 ◆ Kevin Gabriel Lobo: 
     
-    ◆
-    ◆
-    ◆
-    ◆
-    ◆
+    ◆ Como Usuario: quiero que mi puntuación pueda ser muy alta.
+    ◆ Como Desarrollador : quiero lograr que si un enemigo llega a la parte inferior de la pantalla el jugador pierda.
+    ◆ Como Usuario: quiero ver el puntaje que llevo actualmente en pantalla.
+    ◆ Como Desarrollador: quiero lograr que los enemigos se muevan en dirección vertical y horizontal.
+    ◆ Como Desarrollador: Quiero crear una pantalla en la que puedo colocar los demás componentes del juego.
 
 ◆ Alessandro Hidalgo:
 
