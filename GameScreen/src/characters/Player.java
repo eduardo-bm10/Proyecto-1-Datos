@@ -48,6 +48,7 @@ public class Player extends JLabel
             Thread runLaser = new Thread(laser);
             runLaser.start();
             Display.panel.add(laser);
+            Display.panel.updateUI();
         }
     }
 }

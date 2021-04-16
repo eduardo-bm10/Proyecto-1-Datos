@@ -10,7 +10,6 @@ public class CircleList<T> implements List<T>{
 
     }
 
-
     @Override
     public void add(T value) {
         Node<T> newNode = new Node<T>();
@@ -35,8 +34,6 @@ public class CircleList<T> implements List<T>{
     public void remove(int index) {
         if (index ==0 && index<size){
             head = head.getNext();
-            --size;
-
         }else{
             Node<T> current = head;
             int count =0;
@@ -45,8 +42,8 @@ public class CircleList<T> implements List<T>{
                 count++;
             }
             current.setNext(current.getNext().getNext());
-            --size;
         }
+        --size;
 
     }
 
@@ -61,7 +58,7 @@ public class CircleList<T> implements List<T>{
 
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
     @Override

@@ -1,14 +1,14 @@
 package shooting;
 
 import javax.swing.*;
+
+import display.Display;
 import objectsImages.ImageLoader;
 
 public class PlayerMissile extends JLabel implements Runnable
 {
     private final int x;
     private int y;
-
-    public boolean run = false;
 
     public PlayerMissile(int x, int y)
     {
@@ -22,12 +22,12 @@ public class PlayerMissile extends JLabel implements Runnable
         while (y >= 0)
         {
             if (y <= 0)
-                this.run = false;
+                Display.panel.remove(this);
             y -= 10;
             setLocation(x, y);
             try
             {
-                Thread.sleep(1000);
+                Thread.sleep(15);
             }
             catch (InterruptedException e)
             {
@@ -38,7 +38,6 @@ public class PlayerMissile extends JLabel implements Runnable
 
     @Override
     public void run() {
-        if (run)
-            shootMovement();
+        shootMovement();
     }
 }

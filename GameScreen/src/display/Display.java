@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import characters.Player;
-import list.types.Row;
+import list.types.*;
 import characters.Enemy;
 import objectsImages.ImageLoader;
 import shooting.PlayerMissile;
 
 public class Display extends JFrame {
 
-    private final int WIDTH = 900, HEIGHT = 600;
+    private final int WIDTH = 800, HEIGHT = 600;
 
 
     private final int FPS =60;
@@ -46,13 +46,22 @@ public class Display extends JFrame {
         panel.setBackground(Color.DARK_GRAY);
 
         addPlayerToScreen();
+
+        addBasicRow();
     }
 
     public void addPlayerToScreen()
     {
-        Row hilera = new Row();
         Player player = new Player();
-
         panel.add(player);
+        panel.updateUI();
+    }
+
+    public void addBasicRow()
+    {
+        ClassA hilera = new ClassA();
+        hilera.createClassA();
+
+        hilera.moverHilera();
     }
 }

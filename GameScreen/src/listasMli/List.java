@@ -1,10 +1,11 @@
 package listasMli;
 
-public interface List<T>{
-    public void add(T value);
-    public void remove(int index);
-    public T get(int index);
-    public int size();
-    public void clear();
-    public void swap(int index1,int index2);
+public interface List<T>
+{
+    void add(T value);
+    void remove(int index);
+    T get(int index);
+    int size();
+    void clear();
+    void swap(int index1,int index2);
 }

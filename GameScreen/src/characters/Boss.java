@@ -1,33 +1,19 @@
 package characters;
 
 import list.types.CircularLinkedList;
-
+import objectsImages.ImageLoader;
+import javax.swing.JLabel;
 import java.awt.*;
 
 public class Boss extends Enemy
 {
-    public String aqui = "Jefe";
+    int bossLives;
 
-    Image boss = Toolkit.getDefaultToolkit().getImage("images/ufo.png");
-
-    public Boss(int vidasJefe)
+    public Boss(int bossLives)
     {
-        super(vidasJefe);
+        super(ImageLoader.loadImage("images/ufo.png"));
+        this.bossLives = bossLives;
     }
 
-    public void muerteJefeHileraA(){
-        super.muerteEnemigo();
-        //Destruye al resto de enemigos comunes
-    }
 
-    public void alternatePositionInB(CircularLinkedList list)
-    {
-
-    }
-
-    public void muerteJefeHileraC()
-    {
-        super.muerteEnemigo();
-        //Otro enemigo comun se convierte en el jefe
-    }
 }
