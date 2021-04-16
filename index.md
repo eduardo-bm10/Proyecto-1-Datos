@@ -188,7 +188,7 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
      en el que este no pueda subir más.
     ◆Como Usuario: quiero disparar a los enemigos con click izquierdo.
     
-◆ Kevin Lobo: 
+◆ Kevin Gabriel Lobo: 
     
     ◆
     ◆
@@ -213,6 +213,12 @@ Link a nuestro proyecto en jira [SPACE INVADERS- JIRA](https://algoritms-and-dat
 ◆ Se quiere corregir el bug del movimiento del personaje.
 
 ◆ Se quiere corregir el bug que no nos permite que hayan más de un elemento en pantalla.
+
+◆La nave se crea en pantalla pero no en la posición deseada.
+
+◆Error como usuario no puedo mover la nave ni disparar, solo se crea la imagen
+
+◆Error en el movimiento de la nave, esta en vez de moverse va haciendo un repaint de muchas naves en la posición actual del mouse.
 
 ◆ Se quiere corregir el error a la hora de disparar, hay que minimizar y abrir nuevamente la interfaz 
   para que se muestre en pantalla la acción de disparo.
@@ -248,6 +254,6 @@ En la siguiente imagen se muestra el **diagrama de clases** que realizamos al in
 ◆ Eduardo Bolivar.
 ◆ Melissa Oviedo. 
 ◆ Javier Tenorio.
-◆ Kevin Lobo.
+◆ Kevin Gabriel Lobo.
 ◆ Alessandro Hidalgo.
 ```
