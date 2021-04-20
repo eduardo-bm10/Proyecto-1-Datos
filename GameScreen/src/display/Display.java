@@ -7,6 +7,7 @@ import characters.Player;
 import list.types.*;
 import characters.Enemy;
 import objectsImages.ImageLoader;
+import puntos.PuntosSystem;
 import shooting.PlayerMissile;
 
 public class Display extends JFrame {
@@ -46,6 +47,7 @@ public class Display extends JFrame {
         panel.setBackground(Color.DARK_GRAY);
 
         addPlayerToScreen();
+        addPointScreen();
 
         addBasicRow();
     }
@@ -63,5 +65,10 @@ public class Display extends JFrame {
         hilera.createClassA();
 
         hilera.moverHilera();
+    }
+    public void addPointScreen(){
+        System.out.println("Hola pantalla");
+        PuntosSystem Puntos= new PuntosSystem();
+        panel.add(Puntos);
     }
 }
