@@ -19,12 +19,16 @@ public class BasicRow
     public void moverHilera()
     {
         int i = 0;
-        while (i < 7)
+        while (hilera.get(i) != null)
         {
             Display.panel.add(hilera.get(i));
+
             Display.panel.updateUI();
+
             new Thread(hilera.get(i)).start();
+
             i++;
+            
             try
             {
                 Thread.sleep(400);
