@@ -14,12 +14,14 @@ public class BasicRow
         {
             hilera.add(new Enemy(1));
         }
+
+        moveBasicRow();
     }
 
-    public void moverHilera()
+    protected void moveBasicRow()
     {
         int i = 0;
-        while (i < 7)
+        while (hilera.get(i) != null)
         {
             Display.panel.add(hilera.get(i));
             Display.panel.updateUI();
