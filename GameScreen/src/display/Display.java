@@ -14,6 +14,7 @@ public class Display extends JFrame {
 
     private final int WIDTH = 800, HEIGHT = 600;
 
+    private boolean rowOnScreen = false;
 
     private final int FPS =60;
     private double TARGETTIME;
@@ -49,7 +50,7 @@ public class Display extends JFrame {
         addPlayerToScreen();
         addPointScreen();
 
-        addBasicRow();
+        addClassB();
     }
 
     public void addPlayerToScreen()
@@ -61,10 +62,32 @@ public class Display extends JFrame {
 
     public void addBasicRow()
     {
-        ClassA hilera = new ClassA();
-        hilera.createClassA();
+        if (!rowOnScreen) {
+            BasicRow hilera = new BasicRow();
+            hilera.createBasicRow();
 
-        hilera.moverHilera();
+            rowOnScreen = true;
+        }
+    }
+
+    public void addClassA()
+    {
+        if (!rowOnScreen) {
+            ClassA hilera = new ClassA();
+            hilera.createClassA();
+
+            rowOnScreen = true;
+        }
+    }
+
+    public void addClassB()
+    {
+        if (!rowOnScreen){
+            ClassB hilera = new ClassB();
+            hilera.createClassB();
+
+            rowOnScreen = true;
+        }
     }
     public void addPointScreen(){
         System.out.println("Hola pantalla");

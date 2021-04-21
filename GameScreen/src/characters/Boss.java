@@ -1,6 +1,5 @@
 package characters;
 
-import list.types.CircularLinkedList;
 import objectsImages.ImageLoader;
 import javax.swing.JLabel;
 import java.awt.*;
@@ -8,6 +7,8 @@ import java.awt.*;
 public class Boss extends Enemy
 {
     int bossLives;
+    int posx = super.posx;
+    int posy = super.posy;
 
     public Boss(int bossLives)
     {
@@ -15,5 +16,9 @@ public class Boss extends Enemy
         this.bossLives = bossLives;
     }
 
-
+    @Override
+    public void movimientoEnemigo()
+    {
+        super.movimientoEnemigo();
+    }
 }

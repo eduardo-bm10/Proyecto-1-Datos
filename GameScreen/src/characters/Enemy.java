@@ -1,5 +1,6 @@
 package characters;
 
+import display.Display;
 import objectsImages.ImageLoader;
 import javax.swing.*;
 
@@ -56,6 +57,11 @@ public class Enemy extends JLabel implements Runnable
                 }
             }
             posy += 30;
+
+            if (posy >= 500){
+                Display.panel.remove(this);
+                Display.panel.updateUI();
+            }
         }
     }
 
