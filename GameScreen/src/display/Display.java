@@ -1,15 +1,18 @@
 package display;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
 import characters.Player;
-import list.types.Row;
+import list.types.*;
+import characters.Enemy;
+import objectsImages.ImageLoader;
+import puntos.PuntosSystem;
+import shooting.PlayerMissile;
 
 public class Display extends JFrame {
 
-    private final int WIDTH = 900, HEIGHT = 600;
+    private final int WIDTH = 800, HEIGHT = 600;
 
 
     private final int FPS =60;
@@ -17,45 +20,55 @@ public class Display extends JFrame {
     private double delta =0;
     private int AVERAGE_FPS = FPS;
 
-    public static JFrame window = new JFrame();
-
     BufferedImage cursor = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
     Cursor blank = Toolkit.getDefaultToolkit().createCustomCursor(cursor, new Point(0,0), "blank cursor");
 
+    public static JPanel panel = new JPanel();
+
     public Display(){
+        JFrame window = new JFrame();
+
         window.setTitle("Space Invaders");
-        window.setSize(WIDTH,HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
+        window.setSize(WIDTH,HEIGHT);
         window.setLocationRelativeTo(null);
+        window.setResizable(false);
         window.setVisible(true);
+        window.setIconImage(Toolkit.getDefaultToolkit().getImage("images/player.png"));
+
+        window.setLayout(null);
 
         window.getContentPane().setCursor(blank);
 
+        window.add(panel);
+
+        panel.setSize(WIDTH, HEIGHT);
+        panel.setVisible(true);
+        panel.setBackground(Color.DARK_GRAY);
+
         addPlayerToScreen();
+        addPointScreen();
+
+        addBasicRow();
     }
 
-    public void addRowsToScreen(int type)
-    {
-        Row row = new Row();
-
-        if (type == 1)
-            row.createBasic();
-        else if (type == 2)
-            row.createClassA();
-        else if (type == 3)
-            row.createClassB();
-        else if (type == 4)
-            row.createClassC();
-        else if (type == 5)
-            row.createClassD();
-        else
-            row.createClassE();
-
-    }
     public void addPlayerToScreen()
     {
-        Player jugador = new Player();
-        window.add(jugador);
+        Player player = new Player();
+        panel.add(player);
+        panel.updateUI();
+    }
+
+    public void addBasicRow()
+    {
+        ClassA hilera = new ClassA();
+        hilera.createClassA();
+
+        hilera.moverHilera();
+    }
+    public void addPointScreen(){
+        System.out.println("Hola pantalla");
+        PuntosSystem Puntos= new PuntosSystem();
+        panel.add(Puntos);
     }
 }

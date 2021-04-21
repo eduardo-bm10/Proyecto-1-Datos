@@ -1,10 +1,10 @@
 package list.types;
-
+/*
 import characters.Boss;
 import characters.Enemy;
 import display.Display;
 
-public class Row extends LinkedList implements RowFactory
+public class Row implements RowFactory
 {
     Enemy enemigo = new Enemy(1);
     Boss jefe = new Boss(3);
@@ -12,30 +12,39 @@ public class Row extends LinkedList implements RowFactory
     @Override
     public void createBasic()
     {
+        LinkedList list = new LinkedList();
+
         for (int i = 0; i < 7; i++)
         {
-            insertFirst(enemigo);
-            Display.window.add(head.getEnemigo());
+            list.insertLast(enemigo);
+
+            Display.panel.add(list.tail.getEnemigo().enemigo);
+            list.tail.enemigo.movimientoEnemigo();
+
+            try{ Thread.sleep(100);} catch (InterruptedException e){e.printStackTrace();}
         }
     }
 
     @Override
     public void createClassA()
     {
+        LinkedList list = new LinkedList();
+
         for (int i = 0; i < 7; i++)
         {
             if (i == 4)
-                insertFirst(jefe);
-            insertFirst(enemigo);
-            Display.window.add(head.getEnemigo());
+                list.insertFirst(jefe);
+            //list.insertFirst(enemigo);
         }
     }
 
     @Override
     public void createClassB()
     {
+        CircularLinkedList list = new CircularLinkedList();
+
         createClassA();
-        jefe.alternatePositionInB();
+        jefe.alternatePositionInB(list);
     }
 
     @Override
@@ -53,4 +62,4 @@ public class Row extends LinkedList implements RowFactory
 
     }
 }
-
+*/

@@ -1,32 +1,19 @@
 package characters;
 
+import list.types.CircularLinkedList;
+import objectsImages.ImageLoader;
+import javax.swing.JLabel;
 import java.awt.*;
 
 public class Boss extends Enemy
 {
-    public Boss(int vidasJefe)
+    int bossLives;
+
+    public Boss(int bossLives)
     {
-        super(vidasJefe);
+        super(ImageLoader.loadImage("images/ufo.png"));
+        this.bossLives = bossLives;
     }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-    }
 
-    public void muerteJefeHileraA(){
-        super.muerteEnemigo();
-        //Destruye al resto de enemigos comunes
-    }
-
-    public void alternatePositionInB()
-    {
-
-    }
-
-    public void muerteJefeHileraC()
-    {
-        super.muerteEnemigo();
-        //Otro enemigo comun se convierte en el jefe
-    }
 }

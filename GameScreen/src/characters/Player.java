@@ -2,62 +2,53 @@ package characters;
 
 import shooting.PlayerMissile;
 import display.Display;
-import javax.swing.JPanel;
-import java.awt.*;
+import objectsImages.ImageLoader;
+import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Player extends JPanel
+public class Player extends JLabel
 {
     private int posx = 400;
-    private int posy = 400;
+    private final int posy = 500;
 
     Movement movimiento = new Movement();
 
-    Image playerImage = Toolkit.getDefaultToolkit().getImage("images/player.png");
-
     public Player()
     {
-        addMouseMotionListener(movimiento);
-        addMouseListener(movimiento);
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(playerImage, posx, posy, null);
+        super(ImageLoader.loadImage("images/player.png"));
+        Display.panel.addMouseMotionListener(movimiento);
+        Display.panel.addMouseListener(movimiento);
     }
 
     public class Movement extends MouseAdapter
     {
         public int x;
-        public int y;
 
         @Override
         public void mouseMoved(MouseEvent e) {
             int dx = e.getX() - x;
-            int dy = e.getY() - y;
 
             if (e.getComponent().contains(posx, posy))
             {
                 posx += dx;
-                posy += dy;
-                repaint();
+                setLocation(posx, posy);
             }
             else{
                 posx = e.getX() - 40;
-                posy = e.getY() - 50;
             }
             x += dx;
-            y += dy;
         }
 
         @Override
-        public void mouseClicked(MouseEvent e) {
+        public void mouseClicked(MouseEvent e)
+        {
             PlayerMissile laser = new PlayerMissile(posx, posy);
 
-            Display.window.add(laser);
+            Thread runLaser = new Thread(laser);
+            runLaser.start();
+            Display.panel.add(laser);
+            Display.panel.updateUI();
         }
     }
 }

@@ -1,40 +1,66 @@
 package characters;
 
+import objectsImages.ImageLoader;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
-public class Enemy extends JPanel
+public class Enemy extends JLabel implements Runnable
 {
-    int lives;
+    private static boolean RIGHT = true;
+    private static boolean LEFT = false;
 
-    public Rectangle2D.Float enemigo = new Rectangle2D.Float(10, 10, 80, 70);
+    int lives;
+    protected int posx = 10;
+    protected int posy = 10;
 
     public Enemy(int lives)
     {
+        super(ImageLoader.loadImage("images/med2.png"));
         this.lives = lives;
     }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.setColor(Color.orange);
-        g2D.fill(enemigo);
+    protected Enemy(ImageIcon img)
+    {
+        super(img);
     }
 
     public void movimientoEnemigo()
     {
-        while (enemigo.x < 800 & enemigo.y < 400) {
-            enemigo.x += 5;
-            enemigo.y += 5;
-            repaint();
-            try {Thread.sleep(10); } catch (InterruptedException e) { System.err.print("Algo salio mal"); }
+        while (posy <= 600)
+        {
+            while (posx < 750 && RIGHT) {
+                posx += 10;
+                setLocation(posx, posy);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    System.err.print("Algo salio mal");
+                }
+                if (posx >= 750) {
+                    RIGHT = false;
+                    LEFT = true;
+                }
+            }
+            posy += 30;
+
+            while (posx > 0 && LEFT) {
+                posx -= 10;
+                setLocation(posx, posy);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    System.err.print("Algo salio mal");
+                }
+                if (posx <= 0) {
+                    LEFT = false;
+                    RIGHT = true;
+                }
+            }
+            posy += 30;
         }
     }
 
-    public void muerteEnemigo()
-    {
-        //El enemigo desaparece
+    @Override
+    public void run() {
+        movimientoEnemigo();
     }
 }

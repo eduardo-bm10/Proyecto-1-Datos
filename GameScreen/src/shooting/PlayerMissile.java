@@ -1,50 +1,43 @@
 package shooting;
 
+import javax.swing.*;
 
 import display.Display;
-import java.awt.*;
-import javax.swing.JPanel;
+import objectsImages.ImageLoader;
 
-public class PlayerMissile extends JPanel
+public class PlayerMissile extends JLabel implements Runnable
 {
-    private int x;
+    private final int x;
     private int y;
-
-    Image shootImg = Toolkit.getDefaultToolkit().createImage("images/laserBlue01.png");
 
     public PlayerMissile(int x, int y)
     {
+        super(ImageLoader.loadImage("images/laserBlue01.png"));
         this.x = x;
         this.y = y;
-
-        System.out.println("Constructor Disparo");
     }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(shootImg, x, y, null);
-
-        System.out.println("paint");
-    }
-
-    public void movimientoDisparo()
+    public void shootMovement()
     {
-        final int velocity = 10;
-
         while (y >= 0)
         {
-            y -= velocity;
-            repaint();
+            if (y <= 0)
+                Display.panel.remove(this);
+            y -= 10;
+            setLocation(x, y);
             try
             {
-                Thread.sleep(10);
+                Thread.sleep(15);
             }
             catch (InterruptedException e)
             {
-                System.err.println("Interrupted exception ocurred");
+                e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void run() {
+        shootMovement();
     }
 }
