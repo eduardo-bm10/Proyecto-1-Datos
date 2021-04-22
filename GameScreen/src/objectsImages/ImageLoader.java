@@ -7,8 +7,7 @@ import java.awt.*;
 /**
  * Class ImageLoader
  * Permite cargar las imagenes
- * @author Kevin Lobo Juárez
- * @see Eduardo Bolívar
+ * @author  Eduardo Bolívar
  * @version 1.0
  */
 public class ImageLoader

@@ -9,7 +9,6 @@ import java.awt.*;
  * Instancia la variable "score" para mostrarla en pantalla.
  *
  * @author Kevin Lobo
- * @version 1.0
  */
 public class PuntosSystem extends JLabel {
     public int score = 0;
@@ -18,12 +17,6 @@ public class PuntosSystem extends JLabel {
     //public int balaX, balaY;
     //public int enemyX,enemyY;
 
-    /**
-     * Metodo PuntosSystem
-     * Genera el texto con JLabel
-     * @author Kevin Lobo Juarez
-     * @see PuntosSystem
-     */
     public PuntosSystem()
     {
         setText("Puntos:" + score);
@@ -33,13 +26,6 @@ public class PuntosSystem extends JLabel {
         System.out.println("Texto en la pantalla");
     }
 
-    /**
-     * Método addingPoints
-     * Actua como detector de colisiones
-     * Agrega puntos cada que se detecte la collision
-     * @author Kevin Lobo Juarez
-     * @see PuntosSystem
-     */
     public void addingPoints() {
         //la situacion de colision se genera aqui
         //if()
