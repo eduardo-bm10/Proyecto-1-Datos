@@ -5,10 +5,34 @@ import javax.swing.*;
 import display.Display;
 import objectsImages.ImageLoader;
 
+
+/**
+ * Clase PlayerMissile
+ * Permite que las municiones de la nave aparezcan en pantalla
+ *
+ * @author Eduardo Bolívar
+ * @version 1.01
+ *
+ *@see characters.Player
+ *
+ */
+
 public class PlayerMissile extends JLabel implements Runnable
 {
     private final int x;
     private int y;
+
+    /**
+     * Metodo PlayerMissile
+     *Permite cargar la imagen del misile que usa la nave
+     * Posee los parametros de las coordenadas (x,y) de la nave
+     * @param x
+     * @param y
+     *
+     * @author Eduardo Bolívar
+     * @version 1.0
+     * @see PlayerMissile
+     */
 
     public PlayerMissile(int x, int y)
     {
@@ -16,6 +40,15 @@ public class PlayerMissile extends JLabel implements Runnable
         this.x = x;
         this.y = y;
     }
+
+    /**
+     * Método shootMovement
+     * Permite hacer que la munición de la nave se mueva
+     * @author Eduardo Bolívar
+     * @version 1.1
+     *
+     * @see PlayerMissile
+     */
 
     public void shootMovement()
     {
@@ -36,6 +69,15 @@ public class PlayerMissile extends JLabel implements Runnable
         }
     }
 
+    /**
+     * Método run
+     * Permite al metodo shootMovement pueda correr
+     *
+     * @author Eduardo Bolívar
+     * @version 1.1 deluxe
+     *
+     * @see PlayerMissile
+     */
     @Override
     public void run() {
         shootMovement();

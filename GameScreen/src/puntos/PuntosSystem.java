@@ -4,6 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 
+/**
+* Clase PuntosSystemn
+* Genera el texto para poder ver los puntos en la pantalla
+* @author Kevin Lobo Juárez
+* @version 1.01
+*
+* @see PuntosSystem
+*/
+
 public class PuntosSystem extends JLabel {
     public int score = 0;
     public int colision = 0;
@@ -11,6 +20,13 @@ public class PuntosSystem extends JLabel {
     //public int balaX, balaY;
     //public int enemyX,enemyY;
 
+
+    /**
+     * Metodo PuntosSystem
+     * Genera el texto con JLabel
+     * @author Kevin Lobo Juarez
+     * @see PuntosSystem
+     */
     public PuntosSystem(){
         JLabel texto = new JLabel();
         texto.setText("Puntos:" + score);
@@ -21,9 +37,17 @@ public class PuntosSystem extends JLabel {
         addingPoints();
 
     }
+
+    /**
+     * Método addingPoints
+     * Actua como detector de colisiones
+     * Agrega puntos cada que se detecte la collision
+     * @author Kevin Lobo Juarez
+     * @see PuntosSystem
+     */
+
     public void addingPoints() {
         //la situacion de colision se genera aqui
-        //if()
         if (colision != 0){
             score += 100;
             System.out.println("+100 puntos al jugador");
