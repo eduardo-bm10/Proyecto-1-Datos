@@ -21,8 +21,11 @@ public class PlayerMissile extends JLabel implements Runnable
     {
         while (y >= 0)
         {
-            if (y <= 0)
+            if (y <= 0) {
                 Display.panel.remove(this);
+                Display.panel.updateUI();
+            }
+
             y -= 10;
             setLocation(x, y);
             try

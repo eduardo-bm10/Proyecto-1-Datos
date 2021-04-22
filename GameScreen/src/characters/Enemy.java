@@ -2,7 +2,8 @@ package characters;
 
 import display.Display;
 import objectsImages.ImageLoader;
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 /**
  * Clase Enemy genera un objeto a partir de la clase JLabel.
