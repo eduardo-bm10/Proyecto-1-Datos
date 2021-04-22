@@ -1,23 +1,43 @@
 package shooting;
 
-import java.awt.Graphics;
-import java.awt.Color;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class PlayerMissile extends JPanel
+import display.Display;
+import objectsImages.ImageLoader;
+
+public class PlayerMissile extends JLabel implements Runnable
 {
-    int velocidadDisparo = 10;
+    private final int x;
+    private int y;
 
-    public void paintComponent(Graphics g)
+    public PlayerMissile(int x, int y)
     {
-        super.paintComponent(g);
-
-        g.setColor(Color.lightGray);
-        g.fillRect(50, 60, 30, 40);
+        super(ImageLoader.loadImage("images/laserBlue01.png"));
+        this.x = x;
+        this.y = y;
     }
 
-    public void movimientoDisparo()
+    public void shootMovement()
     {
+        while (y >= 0)
+        {
+            if (y <= 0)
+                Display.panel.remove(this);
+            y -= 10;
+            setLocation(x, y);
+            try
+            {
+                Thread.sleep(15);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 
+    @Override
+    public void run() {
+        shootMovement();
     }
 }

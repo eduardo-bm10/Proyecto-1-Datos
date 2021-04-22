@@ -1,40 +1,54 @@
 package characters;
 
-import images.Loader;
 import shooting.PlayerMissile;
-import javax.imageio.ImageIO;
-import java.awt.*;
+import display.Display;
+import objectsImages.ImageLoader;
+import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 
-public class Player extends MouseAdapter
+public class Player extends JLabel
 {
-    public BufferedImage playerTexture;
-    int positionX;
-    int positionY;
-    int vidasJugador = 3;
+    private int posx = 400;
+    private final int posy = 500;
 
-    public Player(int positionX, int positionY, BufferedImage playerTexture)
+    Movement movimiento = new Movement();
+
+    public Player()
     {
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.playerTexture = playerTexture;
-
+        super(ImageLoader.loadImage("images/player.png"));
+        Display.panel.addMouseMotionListener(movimiento);
+        Display.panel.addMouseListener(movimiento);
     }
 
-    static class Movement extends MouseAdapter
+    public class Movement extends MouseAdapter
     {
         public int x;
-        public int y;
 
         @Override
         public void mouseMoved(MouseEvent e) {
             int dx = e.getX() - x;
-            int dy = e.getY() - y;
 
+            if (e.getComponent().contains(posx, posy))
+            {
+                posx += dx;
+                setLocation(posx, posy);
+            }
+            else{
+                posx = e.getX() - 40;
+            }
             x += dx;
-            y += dy;
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            PlayerMissile laser = new PlayerMissile(posx, posy);
+
+            Thread runLaser = new Thread(laser);
+            runLaser.start();
+            Display.panel.add(laser);
+            Display.panel.updateUI();
         }
     }
 }

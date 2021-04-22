@@ -1,20 +1,24 @@
 package characters;
 
+import objectsImages.ImageLoader;
+import javax.swing.JLabel;
+import java.awt.*;
+
 public class Boss extends Enemy
 {
-    public Boss(int vidasJefe, int tamañoJefe)
+    int bossLives;
+    int posx = super.posx;
+    int posy = super.posy;
+
+    public Boss(int bossLives)
     {
-        super(vidasJefe, tamañoJefe);
+        super(ImageLoader.loadImage("images/ufo.png"));
+        this.bossLives = bossLives;
     }
 
-    public void muerteJefeHileraA(){
-        super.muerteEnemigo();
-        //Destruye al resto de enemigos comunes
-    }
-
-    public void muerteJefeHileraC()
+    @Override
+    public void movimientoEnemigo()
     {
-        super.muerteEnemigo();
-        //Otro enemigo comun se convierte en el jefe
+        super.movimientoEnemigo();
     }
 }
