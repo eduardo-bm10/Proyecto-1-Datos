@@ -56,6 +56,7 @@ public class CircleList<T> implements List<T>{
         return current.getValue();
     }
 
+
     @Override
     public int size() {
         return this.size;
@@ -69,7 +70,7 @@ public class CircleList<T> implements List<T>{
     }
 
     @Override
-    public void swap(int index1, int index2) {
+    public void swap(int index) {
 
     }
 }

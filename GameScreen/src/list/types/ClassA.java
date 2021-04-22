@@ -23,7 +23,7 @@ public class ClassA extends BasicRow
         moveClassA();
     }
 
-    private void moveClassA()
+    protected void moveClassA()
     {
         super.moveBasicRow();
     }

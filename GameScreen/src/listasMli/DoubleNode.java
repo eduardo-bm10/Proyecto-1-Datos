@@ -1,11 +1,13 @@
 package listasMli;
 
-public class DoubleNode<T> {
+public class DoubleNode<T>
+{
     private DoubleNode<T> next;
     private DoubleNode<T> prev;
     private T value;
 
-    public DoubleNode() {
+    public DoubleNode()
+    {
         this.next = null;
         this.prev = null;
         this.value = null;

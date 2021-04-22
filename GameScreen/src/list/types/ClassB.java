@@ -1,13 +1,11 @@
 package list.types;
 
 import listasMli.DoubleLinkedList;
-
-import java.util.Random;
+import listasMli.DoubleNode;
 
 public class ClassB extends ClassA
 {
     DoubleLinkedList hilera = super.hilera;
-    int posicionJefe = 3;
 
     public void createClassB()
     {
@@ -16,27 +14,9 @@ public class ClassB extends ClassA
     }
 
     @Override
-    protected void moveBasicRow()
-    {
-        super.moveBasicRow();
+    protected void moveClassA() {
+        super.moveClassA();
 
-        while (hilera.get(0) != null)
-        {
-            changeBoss(new Random().nextInt(7));
-
-            try
-            {
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e)
-            {
-                System.err.println("Error en movimiento de enemigo");
-            }
-        }
-    }
-
-    public void changeBoss(int newIndex)
-    {
-
+        hilera.swap(3);
     }
 }
