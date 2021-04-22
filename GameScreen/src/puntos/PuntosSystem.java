@@ -3,7 +3,13 @@ package puntos;
 import javax.swing.*;
 import java.awt.*;
 
-
+/**
+ * Clase PuntosSystem crea un objeto contador de puntos a partir de JLabel.
+ * Detecta la colisión de un objeto PlayerMissile contra un objeto Enemy.
+ * Instancia la variable "score" para mostrarla en pantalla.
+ *
+ * @author Kevin Lobo
+ */
 public class PuntosSystem extends JLabel {
     public int score = 0;
     public int colision = 0;
@@ -11,16 +17,15 @@ public class PuntosSystem extends JLabel {
     //public int balaX, balaY;
     //public int enemyX,enemyY;
 
-    public PuntosSystem(){
-        JLabel texto = new JLabel();
-        texto.setText("Puntos:" + score);
-        texto.setBounds(40,50,100,200);
-        texto.setForeground(Color.ORANGE);
+    public PuntosSystem()
+    {
+        setText("Puntos:" + score);
+        setBounds(40,50,100,200);
+        setLocation(700, 20);
+        setForeground(Color.ORANGE);
         System.out.println("Texto en la pantalla");
-
-        addingPoints();
-
     }
+
     public void addingPoints() {
         //la situacion de colision se genera aqui
         //if()
