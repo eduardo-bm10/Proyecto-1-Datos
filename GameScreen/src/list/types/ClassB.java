@@ -10,13 +10,12 @@ public class ClassB extends ClassA
     public void createClassB()
     {
         super.createClassA();
-        moveBasicRow();
+        moveClassB();
     }
 
-    @Override
-    protected void moveClassA() {
+    protected void moveClassB() {
         super.moveClassA();
 
-        hilera.swap(3);
+
     }
 }
