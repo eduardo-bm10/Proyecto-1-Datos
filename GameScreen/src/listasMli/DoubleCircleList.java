@@ -97,7 +97,8 @@ public class DoubleCircleList<T> implements List<T> {
     }
 
     @Override
-    public void swap(int index1, int index2) {
+    public void swap(int index)
+    {
 
     }
 }

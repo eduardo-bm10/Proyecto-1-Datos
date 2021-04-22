@@ -10,8 +10,8 @@ public class Enemy extends JLabel implements Runnable
     private static boolean LEFT = false;
 
     int lives;
-    protected int posx = 10;
-    protected int posy = 10;
+    protected int posx = 0;
+    protected int posy = 30;
 
     public Enemy(int lives)
     {

@@ -1,8 +1,10 @@
 package listasMli;
 
+import characters.Boss;
 import characters.Enemy;
 
-public class DoubleLinkedList<T extends Enemy> implements List<T> {
+public class DoubleLinkedList<T extends Enemy> implements List<T>
+{
     private DoubleNode<T> head;
     private int size;
 
@@ -79,19 +81,19 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
     }
 
     @Override
-    public void swap(int index1, int index2) {
-        T d1 = this.get(index1);
-        T d2 = this.get(index2);
+    public void swap(int index)
+    {
+        T d1 = this.get(index);
+        T tmp;
         DoubleNode<T> current = head;
         for(int c = 0; c < size; c++) {
             if(this.get(c) == d1) {
-                current.setValue(d2);
-            } else if(this.get(c) == d2) {
-                current.setValue(d1);
+                tmp = current.getValue();
+                current.getNext().setValue(current.getValue());
+                current.getNext().setValue(tmp);
+            } else {
+                current = current.getNext();
             }
-            current = current.getNext();
         }
     }
-
-
 }
