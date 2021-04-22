@@ -38,7 +38,16 @@ public class BasicRow
     }
 
     /**
-     * 
+     * Realiza por separado cada movimiento de cada objeto en la lista enlazada.
+     * Mientras la hilera esté en pantalla, se seguirá invocando a la función movimiento.
+     * Por medio de un Thread.sleep se da un tiempo y distancia entre cada enemigo.
+     *
+     * @author Eduardo Bolívar
+     *
+     * @see listasMli.DoubleLinkedList
+     * @see listasMli.DoubleNode
+     * @see java.lang.Thread
+     * @see display.Display
      */
     protected void moveBasicRow()
     {
