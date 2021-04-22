@@ -10,42 +10,55 @@ import objectsImages.ImageLoader;
 import puntos.PuntosSystem;
 import shooting.PlayerMissile;
 
-public class Display extends JFrame{
-
+/**
+ * Clase Display provee la ventana e interfaz en la que se ejecuta la aplicación.
+ * Hereda de la clase JFrame
+ *
+ * @author Melissa Oviedo
+ * @version 5.0
+ * @see javax.swing.JFrame
+ */
+public class Display extends JFrame
+{
     private final int WIDTH = 800, HEIGHT = 600;
-
     BufferedImage cursor = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
     Cursor blank = Toolkit.getDefaultToolkit().createCustomCursor(cursor, new Point(0,0), "blank cursor");
-
     public static JPanel panel = new JPanel();
-
-    public Display() {
-        JFrame window = new JFrame();
-
-        window.setTitle("Space Invaders");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setSize(WIDTH,HEIGHT);
-        window.setLocationRelativeTo(null);
-        window.setResizable(false);
-        window.setVisible(true);
-        window.setIconImage(Toolkit.getDefaultToolkit().getImage("images/player.png"));
-
-        window.setLayout(null);
-
-        window.getContentPane().setCursor(blank);
-        window.add(panel);
-
+    /**
+     * El constructor de la clase Display.
+     * Asigna las características esenciales de la ventana.
+     * Ejecuta el método para añadir al jugador a la pantalla.
+     * Ejecuta el método para añadir el contador de puntos a la pantalla.
+     *
+     * @author Melissa Oviedo, Eduardo Bolívar
+     */
+    public Display()
+    {
+        setTitle("Space Invaders");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(WIDTH,HEIGHT);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+        setIconImage(Toolkit.getDefaultToolkit().getImage("images/player.png"));
+        setLayout(null);
+        getContentPane().setCursor(blank);
+        add(panel);
         panel.setSize(WIDTH, HEIGHT);
         panel.setVisible(true);
         panel.setBackground(Color.DARK_GRAY);
-
         addPlayerToScreen();
-
         addPointScreen();
-
         addClassB();
     }
 
+    /**
+     * Instancia un objeto Player y lo agrega a la ventana.
+     * Realiza un update luego de agregar el objeto para que aparezca en pantalla.
+     *
+     * @author Eduardo Bolívar
+     * @see characters.Player
+     */
     public void addPlayerToScreen()
     {
         Player player = new Player();
@@ -55,36 +68,24 @@ public class Display extends JFrame{
 
     public void addBasicRow()
     {
-        if (!rowOnScreen) {
             BasicRow hilera = new BasicRow();
             hilera.createBasicRow();
-
-            rowOnScreen = true;
-        }
     }
 
     public void addClassA()
     {
-        if (!rowOnScreen) {
             ClassA hilera = new ClassA();
             hilera.createClassA();
-
-            rowOnScreen = true;
-        }
     }
 
     public void addClassB()
     {
-        if (!rowOnScreen){
             ClassB hilera = new ClassB();
             hilera.createClassB();
-
-            rowOnScreen = true;
-        }
     }
-    public void addPointScreen(){
-        System.out.println("Hola pantalla");
-        PuntosSystem Puntos= new PuntosSystem();
-        panel.add(Puntos);
+    public void addPointScreen()
+    {
+        PuntosSystem puntos= new PuntosSystem();
+        panel.add(puntos);
     }
 }

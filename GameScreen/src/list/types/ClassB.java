@@ -5,8 +5,6 @@ import listasMli.DoubleNode;
 
 public class ClassB extends ClassA
 {
-    DoubleLinkedList hilera = super.hilera;
-
     public void createClassB()
     {
         super.createClassA();
