@@ -17,5 +17,5 @@ public interface List<T>
     T get(int index);
     int size();
     void clear();
-    void swap(int index1,int index2);
+    void swap(int index);
 }

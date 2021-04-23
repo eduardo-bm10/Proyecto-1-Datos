@@ -3,7 +3,6 @@ package listasMli;
 import characters.Boss;
 import characters.Enemy;
 
-
 /**
  * Class DoubleLinkedList
  * Permite un doble puntero para leer la informacion ambos punteros tienen direcciones contrarias
@@ -12,10 +11,6 @@ import characters.Enemy;
  * @version 1.0
  * @see DoubleLinkedList
  */
-
-
-
-
 public class DoubleLinkedList<T extends Enemy> implements List<T>
 {
     public DoubleNode<T> head;
@@ -153,3 +148,4 @@ public class DoubleLinkedList<T extends Enemy> implements List<T>
         }
     }
 }
+

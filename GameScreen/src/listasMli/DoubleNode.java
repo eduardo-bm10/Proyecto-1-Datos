@@ -9,8 +9,6 @@ package listasMli;
  * @version 1.0
  * @see DoubleNode
  */
-
-
 public class DoubleNode<T>
 {
     private DoubleNode<T> next;
@@ -24,7 +22,6 @@ public class DoubleNode<T>
      * @author Melisa Oviedo
      * @version 1.0
      */
-
     public DoubleNode()
     {
         this.next = null;
