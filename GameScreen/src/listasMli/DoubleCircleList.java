@@ -1,5 +1,15 @@
 package listasMli;
 
+
+/**
+ * Class DoubleCircleList
+ * Permite un doble puntero para leer la informacion ambos punteros tienen direcciones contrarias
+ * Está lista no posee fin
+ * @author Melisa Oviedo
+ * @version 1.0
+ * @see DoubleCircleList
+ */
+
 public class DoubleCircleList<T> implements List<T> {
     private DoubleNode<T> head;
     private int size;
@@ -8,6 +18,14 @@ public class DoubleCircleList<T> implements List<T> {
         size =0;
     }
 
+    /**
+     * Metodo add
+     * Permite añadir valores a la lista circular doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     * @see DoubleNode
+     */
 
 
     @Override
@@ -33,6 +51,16 @@ public class DoubleCircleList<T> implements List<T> {
 
     }
 
+
+    /**
+     * Metodo remove
+     * Permite remover valores que se encuentre en la lista circular doble enlazada
+     *
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     * @see DoubleNode
+     */
     @Override
     public void remove(int index) {
         if(index ==0){
@@ -61,6 +89,14 @@ public class DoubleCircleList<T> implements List<T> {
         }
 
     }
+    /**
+     * Metodo get
+     * Permite acceder a los valores de la lista circular doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     * @see DoubleNode
+     */
 
     @Override
     public T get(int index) {
@@ -83,11 +119,27 @@ public class DoubleCircleList<T> implements List<T> {
             return null;
         }
     }
+    /**
+     * Metodo size
+     * Permite obtener el tamaño de la lista circular doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     * @see DoubleNode
+     */
 
     @Override
     public int size() {
         return size;
     }
+    /**
+     * Metodo clear
+     * Permite poner la posición de la lista circular doble enlazada en cero
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     * @see DoubleNode
+     */
 
     @Override
     public void clear() {
@@ -95,6 +147,14 @@ public class DoubleCircleList<T> implements List<T> {
         size = 0;
 
     }
+    /**
+     * Metodo swap
+     * Intercambia los valores de index1 e index2 en la lista circular doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     * @see DoubleNode
+     */
 
     @Override
     public void swap(int index1, int index2) {
