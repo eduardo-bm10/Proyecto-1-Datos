@@ -1,4 +1,6 @@
 package listasMli;
+
+
     /**
      * Class Node
      * Permite recorrer la informacion/valores a lo largo de la lista enlazada
@@ -7,6 +9,8 @@ package listasMli;
      * @version 1.0
      * @see Node
      */
+
+
 
 public class Node<T> {
     private T value;

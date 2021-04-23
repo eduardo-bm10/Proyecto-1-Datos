@@ -1,6 +1,8 @@
 package listasMli;
 
 
+
+
 /**
  * Class CircleList
  *La lista de circular posee un punto inicial
