@@ -1,13 +1,13 @@
 package shooting;
 
 import javax.swing.*;
-
+import characters.Enemy;
 import display.Display;
 import objectsImages.ImageLoader;
 
 public class PlayerMissile extends JLabel implements Runnable
 {
-    private final int x;
+    private int x;
     private int y;
 
     public PlayerMissile(int x, int y)
@@ -25,7 +25,6 @@ public class PlayerMissile extends JLabel implements Runnable
                 Display.panel.remove(this);
                 Display.panel.updateUI();
             }
-
             y -= 10;
             setLocation(x, y);
             try

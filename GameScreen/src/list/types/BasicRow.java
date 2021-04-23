@@ -81,4 +81,9 @@ public class BasicRow
             }
         }
     }
+
+    protected void colision()
+    {
+
+    }
 }

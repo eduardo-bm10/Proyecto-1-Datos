@@ -69,8 +69,7 @@ public class Enemy extends JLabel implements Runnable
      */
     public void movimientoEnemigo()
     {
-        while (posy <= 600)
-        {
+        while (posy <= 600) {
             while (posx < 750 && RIGHT) {
                 posx += 10;
                 setLocation(posx, posy);
@@ -85,7 +84,6 @@ public class Enemy extends JLabel implements Runnable
                 }
             }
             posy += 30;
-
             while (posx > 0 && LEFT) {
                 posx -= 10;
                 setLocation(posx, posy);
