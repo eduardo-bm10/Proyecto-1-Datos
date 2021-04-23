@@ -18,6 +18,13 @@ import listasMli.DoubleLinkedList;
 public class ClassA extends BasicRow
 {
     DoubleLinkedList hilera = super.hilera;
+    public Enemy enemigo1 = new Enemy(1);
+    public Enemy enemigo2 = new Enemy(1);
+    public Enemy enemigo3 = new Enemy(1);
+    public Enemy enemigo4 = new Enemy(1);
+    public Enemy enemigo5 = new Enemy(1);
+    public Enemy enemigo6 = new Enemy(1);
+    public Enemy jefe1 = new Boss(4);
 
     /**
      * Añade uno por uno, los siete enemigos a la hilera previamente instanciada.
@@ -30,15 +37,13 @@ public class ClassA extends BasicRow
      */
     public void createClassA()
     {
-        for (int i = 0; i < 7; i++)
-        {
-            if (i == 3)
-                hilera.add(new Boss(4));
-            else {
-                hilera.add(new Enemy(1));
-            }
-        }
-
+        hilera.add(enemigo1);
+        hilera.add(enemigo2);
+        hilera.add(enemigo3);
+        hilera.add(jefe1);
+        hilera.add(enemigo4);
+        hilera.add(enemigo5);
+        hilera.add(enemigo6);
         moveClassA();
     }
 
