@@ -3,15 +3,39 @@ package listasMli;
 import characters.Boss;
 import characters.Enemy;
 
+/**
+ * Class DoubleLinkedList
+ * Permite un doble puntero para leer la informacion ambos punteros tienen direcciones contrarias
+ *
+ * @author Melisa Oviedo
+ * @version 1.0
+ * @see DoubleLinkedList
+ */
 public class DoubleLinkedList<T extends Enemy> implements List<T>
 {
     public DoubleNode<T> head;
     private int size;
 
+
+    /**
+     * Metodo DoubleLinkedList
+     * Habilita la posibilidad para agregar valores de la lista doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     */
+
     public DoubleLinkedList() {
         head = null;
         size = 0;
     }
+    /**
+     * Metodo add
+     * Permite añadir valores a la lista doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     */
 
     @Override
     public void add(T value)
@@ -31,6 +55,13 @@ public class DoubleLinkedList<T extends Enemy> implements List<T>
         current.setNext(newNode);
         size++;
     }
+    /**
+     * Metodo remove
+     * Permite remover valores que se encuentre en la lista doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     */
 
     @Override
     public void remove(int index) {
@@ -55,6 +86,13 @@ public class DoubleLinkedList<T extends Enemy> implements List<T>
             return;
         }
     }
+    /**
+     * Metodo get
+     * Permite acceder a los valores de la lista doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     */
 
     @Override
     public T get(int index) {
@@ -67,18 +105,31 @@ public class DoubleLinkedList<T extends Enemy> implements List<T>
         return current.getValue();
     }
 
+    /**
+     * Metodo clear
+     * Permite obtener el tamaño de la lista doble enlazada
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     */
     @Override
     public void clear() {
         this.head = null;
         this.size = 0;
     }
 
-
-
+    /**
+     * Metodo size
+     * Permite poner la posición de la lista doble enlazada en cero
+     *
+     * @author Melisa Oviedo
+     * @version 1.0
+     */
     @Override
     public int size() {
         return size;
     }
+
 
     @Override
     public void swap(int index)
@@ -97,3 +148,4 @@ public class DoubleLinkedList<T extends Enemy> implements List<T>
         }
     }
 }
+
