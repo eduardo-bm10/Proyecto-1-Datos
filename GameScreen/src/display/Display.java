@@ -49,7 +49,7 @@ public class Display extends JFrame
         panel.setBackground(Color.DARK_GRAY);
         addPlayerToScreen();
         addPointScreen();
-        addBasicRow();
+        addRow();
     }
 
     /**
@@ -66,23 +66,25 @@ public class Display extends JFrame
         panel.updateUI();
     }
 
-    public void addBasicRow()
-    {
-            BasicRow hilera = new BasicRow();
-            hilera.createBasicRow();
+    public static boolean onScreen = false;
+    public void addRow() {
+        BasicRow hilera1 = new BasicRow();
+        ClassA hilera2 = new ClassA();
+        int i = 0;
+        while (i < 100 && !onScreen)
+        {
+            if (i%2==0) {
+                hilera1.createBasicRow();
+                onScreen = true;
+            }
+            else {
+                hilera2.createClassA();
+                onScreen = true;
+            }
+            i++;
+        }
     }
 
-    public void addClassA()
-    {
-            ClassA hilera = new ClassA();
-            hilera.createClassA();
-    }
-
-    public void addClassB()
-    {
-            ClassB hilera = new ClassB();
-            hilera.createClassB();
-    }
     public void addPointScreen()
     {
         PuntosSystem puntos= new PuntosSystem();

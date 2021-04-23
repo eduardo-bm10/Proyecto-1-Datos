@@ -101,6 +101,7 @@ public class Enemy extends JLabel implements Runnable
 
             if (posy >= 500){
                 Display.panel.remove(this);
+                Display.onScreen = false;
                 Display.panel.updateUI();
             }
         }
