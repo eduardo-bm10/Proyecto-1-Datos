@@ -24,9 +24,6 @@ public class ClassB extends ClassA implements Runnable
         super.createClassA();
     }
 
-    /**
-     *
-     */
     @Override
     protected void moveClassA()
     {
