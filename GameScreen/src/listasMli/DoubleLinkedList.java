@@ -5,7 +5,7 @@ import characters.Enemy;
 
 public class DoubleLinkedList<T extends Enemy> implements List<T>
 {
-    private DoubleNode<T> head;
+    public DoubleNode<T> head;
     private int size;
 
     public DoubleLinkedList() {

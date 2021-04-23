@@ -1,8 +1,6 @@
 package characters;
 
 import objectsImages.ImageLoader;
-import javax.swing.JLabel;
-import java.awt.*;
 
 /**
  * Clase Boss genera un objeto enemigo jefe a partir de la clase Enemy.
@@ -18,8 +16,6 @@ import java.awt.*;
 public class Boss extends Enemy
 {
     int bossLives;
-    int posx = super.posx;
-    int posy = super.posy;
 
     /**
      * El constructor de la clase Boss añade al JLabel un objeto ImageIcon.
