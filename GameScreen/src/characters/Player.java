@@ -59,7 +59,8 @@ public class Player extends JLabel
          * @see java.awt.event.MouseEvent
          */
         @Override
-        public void mouseMoved(MouseEvent e) {
+        public void mouseMoved(MouseEvent e)
+        {
             int dx = e.getX() - x;
 
             if (e.getComponent().contains(posx, posy))

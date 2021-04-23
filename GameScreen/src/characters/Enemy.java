@@ -2,6 +2,9 @@ package characters;
 
 import display.Display;
 import objectsImages.ImageLoader;
+import pruebas.Colision;
+import shooting.PlayerMissile;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
@@ -69,7 +72,7 @@ public class Enemy extends JLabel implements Runnable
      */
     public void movimientoEnemigo()
     {
-        while (posy <= 600) {
+        while (posy <= 600){
             while (posx < 750 && RIGHT) {
                 posx += 10;
                 setLocation(posx, posy);

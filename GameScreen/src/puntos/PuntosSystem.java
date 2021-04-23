@@ -1,5 +1,8 @@
 package puntos;
 
+import display.Display;
+import pruebas.Colision;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,11 +14,7 @@ import java.awt.*;
  * @author Kevin Lobo
  */
 public class PuntosSystem extends JLabel {
-    public int score = 0;
-    public int colision = 0;
-    //Sería necesario poder agregar las coordenadas de los enemigos y jugador
-    //public int balaX, balaY;
-    //public int enemyX,enemyY;
+    private static int score = 0;
 
     public PuntosSystem()
     {
@@ -23,17 +22,11 @@ public class PuntosSystem extends JLabel {
         setBounds(40,50,100,200);
         setLocation(700, 20);
         setForeground(Color.ORANGE);
-        System.out.println("Texto en la pantalla");
     }
 
-    public void addingPoints() {
-        //la situacion de colision se genera aqui
-        //if()
-        if (colision != 0){
-            score += 100;
-            System.out.println("+100 puntos al jugador");
-        }else{
-            System.out.println("No se sumó nada");
-        }
+    public void addingPoints()
+    {
+        score += 100;
+        this.setText("Puntos:" + score);
     }
 }

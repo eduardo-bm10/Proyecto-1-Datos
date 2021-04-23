@@ -3,7 +3,10 @@ package shooting;
 import javax.swing.*;
 import characters.Enemy;
 import display.Display;
+import list.types.BasicRow;
 import objectsImages.ImageLoader;
+import pruebas.Colision;
+import puntos.PuntosSystem;
 
 public class PlayerMissile extends JLabel implements Runnable
 {
@@ -21,6 +24,12 @@ public class PlayerMissile extends JLabel implements Runnable
     {
         while (y >= 0)
         {
+            for (int i = 0; i < 7; i++) {
+                if (Colision.checkCollision(BasicRow.hilera.get(i), this))
+                {
+                    new PuntosSystem().addingPoints();
+                }
+            }
             if (y <= 0) {
                 Display.panel.remove(this);
                 Display.panel.updateUI();

@@ -16,14 +16,14 @@ import listasMli.DoubleLinkedList;
  */
 public class BasicRow
 {
-    DoubleLinkedList hilera = new DoubleLinkedList();
-    public Enemy enemigo1 = new Enemy(1);
-    public Enemy enemigo2 = new Enemy(1);
-    public Enemy enemigo3 = new Enemy(1);
-    public Enemy enemigo4 = new Enemy(1);
-    public Enemy enemigo5 = new Enemy(1);
-    public Enemy enemigo6 = new Enemy(1);
-    public Enemy enemigo7 = new Enemy(1);
+    public static DoubleLinkedList hilera = new DoubleLinkedList();
+    private Enemy enemigo1 = new Enemy(1);
+    private Enemy enemigo2 = new Enemy(1);
+    private Enemy enemigo3 = new Enemy(1);
+    private Enemy enemigo4 = new Enemy(1);
+    private Enemy enemigo5 = new Enemy(1);
+    private Enemy enemigo6 = new Enemy(1);
+    private Enemy enemigo7 = new Enemy(1);
 
     /**
      * Añade uno por uno, siete enemigos comunes a la lista enlazada previamente instanciada.
@@ -80,10 +80,5 @@ public class BasicRow
                 System.err.println("Error en tiempo de generar enemigos");
             }
         }
-    }
-
-    protected void colision()
-    {
-
     }
 }

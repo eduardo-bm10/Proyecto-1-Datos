@@ -49,7 +49,7 @@ public class Display extends JFrame
         panel.setBackground(Color.DARK_GRAY);
         addPlayerToScreen();
         addPointScreen();
-        addClassA();
+        addBasicRow();
     }
 
     /**
