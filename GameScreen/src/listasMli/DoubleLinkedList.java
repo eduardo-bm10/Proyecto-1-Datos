@@ -1,7 +1,7 @@
 package listasMli;
 
+import characters.Boss;
 import characters.Enemy;
-
 
 /**
  * Class DoubleLinkedList
@@ -12,8 +12,12 @@ import characters.Enemy;
  * @see DoubleLinkedList
  */
 
-public class DoubleLinkedList<T extends Enemy> implements List<T> {
-    private DoubleNode<T> head;
+
+
+
+public class DoubleLinkedList<T extends Enemy> implements List<T>
+{
+    public DoubleNode<T> head;
     private int size;
 
 
@@ -29,7 +33,6 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
         head = null;
         size = 0;
     }
-
     /**
      * Metodo add
      * Permite añadir valores a la lista doble enlazada
@@ -56,7 +59,6 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
         current.setNext(newNode);
         size++;
     }
-
     /**
      * Metodo remove
      * Permite remover valores que se encuentre en la lista doble enlazada
@@ -64,7 +66,6 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
      * @author Melisa Oviedo
      * @version 1.0
      */
-
 
     @Override
     public void remove(int index) {
@@ -97,7 +98,6 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
      * @version 1.0
      */
 
-
     @Override
     public T get(int index) {
         if(index > size-1)
@@ -108,6 +108,7 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
         }
         return current.getValue();
     }
+
     /**
      * Metodo clear
      * Permite obtener el tamaño de la lista doble enlazada
@@ -115,13 +116,12 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
      * @author Melisa Oviedo
      * @version 1.0
      */
-
-
     @Override
     public void clear() {
         this.head = null;
         this.size = 0;
     }
+
     /**
      * Metodo size
      * Permite poner la posición de la lista doble enlazada en cero
@@ -129,33 +129,26 @@ public class DoubleLinkedList<T extends Enemy> implements List<T> {
      * @author Melisa Oviedo
      * @version 1.0
      */
-
     @Override
     public int size() {
         return size;
     }
 
-    /**
-     * Metodo swap
-     * Intercambia los valores de index1 e index2 en la lista doble enlazada
-     *
-     * @author Melisa Oviedo
-     * @version 1.0
-     */
-
 
     @Override
-    public void swap(int index1, int index2) {
-        T d1 = this.get(index1);
-        T d2 = this.get(index2);
+    public void swap(int index)
+    {
+        T d1 = this.get(index);
+        T tmp;
         DoubleNode<T> current = head;
         for(int c = 0; c < size; c++) {
             if(this.get(c) == d1) {
-                current.setValue(d2);
-            } else if(this.get(c) == d2) {
-                current.setValue(d1);
+                tmp = current.getValue();
+                current.getNext().setValue(current.getValue());
+                current.getNext().setValue(tmp);
+            } else {
+                current = current.getNext();
             }
-            current = current.getNext();
         }
     }
 }
