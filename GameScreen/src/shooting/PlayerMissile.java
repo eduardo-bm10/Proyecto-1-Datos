@@ -1,11 +1,9 @@
 package shooting;
 
 import javax.swing.*;
-import characters.Enemy;
 import display.Display;
 import list.types.BasicRow;
 import objectsImages.ImageLoader;
-import pruebas.Colision;
 import puntos.PuntosSystem;
 
 

@@ -1,8 +1,5 @@
 package puntos;
 
-import display.Display;
-import pruebas.Colision;
-
 import javax.swing.*;
 import java.awt.*;
 

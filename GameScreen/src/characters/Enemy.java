@@ -2,9 +2,6 @@ package characters;
 
 import display.Display;
 import objectsImages.ImageLoader;
-import pruebas.Colision;
-import shooting.PlayerMissile;
-
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
